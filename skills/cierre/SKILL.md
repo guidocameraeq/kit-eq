@@ -5,7 +5,7 @@ description: Cierra la conversación dejando el cuaderno al día - reescribe SES
 
 # Cierre: dejar el cuaderno al día
 
-La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito en la carpeta lo necesario para que la próxima conversación arranque con **inicio** sin que nadie explique nada.
+La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito en la carpeta lo necesario para que la próxima conversación arranque con **inicio** sin que nadie explique nada. Le hablás de vos, en español rioplatense (nunca "tú"), en criollo y sin jerga.
 
 ## Dónde anda
 
@@ -22,7 +22,7 @@ La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito
 
 1. **Repasar la conversación**: qué se hizo, qué se decidió, qué archivos salieron en `resultados/`, qué se probó y no anduvo, qué quedó pendiente.
 2. **Mostrar el borrador** de lo que vas a escribir (las 4 secciones de abajo, cortas) y pedir el OK. Si la persona corrige algo, lo que dice ella manda.
-3. **Reescribir entero `SESSION_HANDOFF.md`** con este formato:
+3. **Reescribir entero `SESSION_HANDOFF.md`** con este formato. Antes, leé el que hay: si tiene algo que no salió de un cierre (una nota que agregó la persona a mano, un pendiente viejo que sigue vivo), pasalo a la versión nueva y mostralo en el borrador. Nunca lo pierdas en silencio.
    ```
    # Dónde quedamos
 
