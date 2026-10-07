@@ -17,9 +17,9 @@ Está pensado para gente que **no programa**: todo en criollo, sin jerga y sin e
 /plugin install kit-eq@kit-eq
 ```
 
-**En Cowork o Chat** (cuentas Pro): las skills se suben de a una como ZIP en Configuración > Skills. Los ZIP se arman con `py herramientas/empaquetar.py` (quedan en `dist/`).
+**En Cowork o Chat** (cuentas Pro): primero se activa "Code execution and file creation" y después las skills se suben de a una como ZIP en Configuración (Settings o Customize) > Skills. Para Cowork alcanzan `capataz`, `inicio` y `cierre`; `configurar` y `reportes` son solo de Code. Los ZIP se arman con `py herramientas/empaquetar.py` (quedan en `dist/`, cada uno con la carpeta de la skill y su `SKILL.md` adentro).
 
-> Instalación NO VERIFICADA todavía en una cuenta Pro real (ni la de Code ni la de Cowork). Ver CHANGELOG.
+> Probado el 07/10/2026 con la línea de comandos de Claude Code, desde la carpeta local: `claude plugin validate` pasa y `claude plugin marketplace add` + `claude plugin install kit-eq@kit-eq` instalan las 5 skills. NO VERIFICADO: la instalación desde GitHub (el repo todavía no está publicado), los comandos `/plugin` en la pestaña Code de la app de escritorio y la subida de los ZIP en Cowork Pro. Ver CHANGELOG.
 
 ## Qué hace cada skill
 
