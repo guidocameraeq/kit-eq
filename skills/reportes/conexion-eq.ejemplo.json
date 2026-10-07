@@ -1,6 +1,6 @@
 {
-  "_nota": "EJEMPLO con valores inventados. El archivo de verdad se llama conexion-eq.json, lo arma Guido y vive en la carpeta compartida (nunca en este repo).",
-  "servidor": "SERVIDOR-EJEMPLO\INSTANCIA",
+  "_nota": "EJEMPLO con valores inventados. El archivo de verdad se llama conexion-eq.json, lo arma Guido y vive en la carpeta compartida (nunca en este repo). OJO: en JSON la barra invertida va doble (SERVIDOR\\INSTANCIA).",
+  "servidor": "SERVIDOR-EJEMPLO\\INSTANCIA",
   "base": "BaseDeEjemplo",
   "autenticacion": "sql",
   "usuario": "usuario_solo_lectura",

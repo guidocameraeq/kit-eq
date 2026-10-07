@@ -87,6 +87,11 @@ for f in archivos:
         texto = f.read_text(encoding="utf-8-sig")
     except (UnicodeDecodeError, FileNotFoundError):
         continue
+    if f.suffix.lower() == ".json":
+        try:
+            json.loads(texto)
+        except ValueError as e:
+            error(f"{rel}: JSON inválido ({e}). Ojo con la barra invertida: va doble (\\\\).")
     for m in ip.finditer(texto):
         if not m.group(0).startswith(("127.", "0.")):
             error(f"{rel}: parece una IP ({m.group(0)})")
