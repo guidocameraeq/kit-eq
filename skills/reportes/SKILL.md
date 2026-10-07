@@ -5,7 +5,7 @@ description: Saca reportes en Excel de las vistas del SQL Server de la empresa, 
 
 # Reportes: del pedido en criollo a un Excel controlado
 
-Convertís un pedido en criollo en una consulta de **solo lectura** a una vista del SQL Server y entregás un Excel con totales por fórmula y una hoja de control. El usuario no escribe SQL ni ve SQL salvo que lo pida.
+Convertís un pedido en criollo en una consulta de **solo lectura** a una vista del SQL Server y entregás un Excel con totales por fórmula y una hoja de control. El usuario no escribe SQL ni ve SQL salvo que lo pida. Le hablás de vos, en español rioplatense (nunca "tú"), en criollo y sin jerga.
 
 ## Dónde anda y dónde NO
 
@@ -22,6 +22,8 @@ En la carpeta **Reportes** del usuario (por defecto `Documentos\Reportes`):
 
 Si falta algo, no improvises: decí qué falta y sugerí correr `configurar` o pedírselo a Guido.
 
+Los comandos de abajo usan rutas que empiezan con `.\` (por ejemplo `.\conexion-eq.json`): valen si la sesión de Code está abierta **en la carpeta Reportes**. Si está abierta en otra carpeta, usá la ruta completa de Reportes en todos los comandos (no copies `conexion-eq.json` a otro lado).
+
 Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta base de esta skill):
 - `scripts/consultar.ps1`: corre un solo SELECT y deja un CSV. Frena cualquier otra cosa y avisa en criollo si no hay red.
 - `scripts/csv_a_excel.py`: pasa el CSV a Excel con encabezado, filtros, fila TOTAL con `=SUBTOTAL` y hoja **Control**.
@@ -36,6 +38,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
    ```
    Si dice **SIN RED**, decí: *"No llego al servidor. ¿Estás en la oficina o con la VPN prendida?"* y pará. No reintentes en loop.
    Usá siempre `powershell` (Windows PowerShell 5.1, que trae SqlClient), no `pwsh`.
+   Otros avisos del script: **SIN PERMISO** (el servidor no aceptó el usuario: avisale a Guido, no pruebes otra clave), **FALTA CONEXION / CONEXION INCOMPLETA / CONEXION ROTA** (el archivo de conexión falta o está mal: decí cuál y que lo arregle Guido), **FRENADO** (la consulta no era un solo SELECT: corregila vos; nunca intentes esquivar el filtro).
 4. **Consultar.** Armá un único `SELECT` sobre la vista, con `TOP` si es una prueba. Nombre de salida: `resultados\AAAA-MM-DD_tema_v01.csv`. Corré `consultar.ps1` sin `-SoloProbar`.
 5. **Pasar a Excel:**
    ```
@@ -54,7 +57,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 Para algo que se mira seguido, conviene un Excel que se actualiza solo desde la vista. **NO VERIFICADO en las PCs de los alumnos:** que Excel se conecte con el usuario de solo lectura. Guiá al usuario clic por clic, sin pedirle que escriba SQL:
 
 1. Excel en blanco > pestaña **Datos** > **Obtener datos** > **Desde una base de datos** > **Desde base de datos de SQL Server**.
-2. **Servidor** y **Base de datos**: los que figuran en `conexion-eq.json` (dictáselos sin mostrar la clave; la clave la escribe el usuario cuando Excel la pide, en la opción **Base de datos**, no en Windows).
+2. **Servidor** y **Base de datos**: los que figuran en `conexion-eq.json` (dictáselos sin mostrar la clave). Cuando Excel pida usuario y clave, elegí la opción **Base de datos** (no Windows): el usuario se lo dictás; la clave la escribe la persona, que la tiene del material de Guido (si no la tiene, que se la pida a él; vos no la mostrás).
 3. En el navegador de Excel, elegir la vista de `vistas.md` y tocar **Cargar**.
 4. Guardar en `Reportes\plantillas\` con nombre `vista_<tema>.xlsx`.
 5. Para usarlo: abrir, **Datos > Actualizar todo**, y recién ahí pasarlo a Cowork para analizar (tablas dinámicas, cruces). Cowork trabaja sobre **una copia** en la carpeta del tema, no sobre la plantilla.
