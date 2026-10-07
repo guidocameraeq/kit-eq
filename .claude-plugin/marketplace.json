@@ -3,6 +3,9 @@
   "owner": {
     "name": "eQ"
   },
+  "metadata": {
+    "description": "Kit eQ: el método de la carpeta para trabajar con Claude en la oficina, para gente que no programa."
+  },
   "plugins": [
     {
       "name": "kit-eq",
