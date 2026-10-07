@@ -140,9 +140,13 @@ def main():
         largo = max([len(str(nombre))] + [len(str(r[j - 1])) for r in datos[:500] if j - 1 < len(r)])
         ws.column_dimensions[get_column_letter(j)].width = min(max(10, largo + 2), 50)
     for j in numericas:
+        # Importes (lo que se suma o lo que tiene decimales): 1.234,56. Números enteros
+        # que no se suman (nro. de pedido, código): sin decimales, para que no salga "1,00".
+        con_decimales = any("." in r[j] for r in datos if j < len(r))
+        formato = "#,##0.00" if (j in a_sumar or con_decimales) else "0"
         for fila in ws.iter_rows(min_row=2, min_col=j + 1, max_col=j + 1):
             for c in fila:
-                c.number_format = "#,##0.00"
+                c.number_format = formato
     for j in fechas:
         for fila in ws.iter_rows(min_row=2, max_row=ultima, min_col=j + 1, max_col=j + 1):
             for c in fila:
@@ -167,7 +171,10 @@ def main():
     print("OK")
     print(f"Filas: {len(datos)}")
     print(f"Columnas: {len(encabezado)}")
-    print("Totales con fórmula en: " + (", ".join(encabezado[j] for j in a_sumar) if a_sumar else "(ninguna columna numérica)"))
+    if not datos:
+        print("AVISO SIN FILAS: la consulta no trajo datos. Revisá el filtro (período, cliente) antes de entregar.")
+    else:
+        print("Totales con fórmula en: " + (", ".join(encabezado[j] for j in a_sumar) if a_sumar else "(ninguna columna numérica)"))
     for nombre, total in totales_py.items():
         print(f"Control {nombre}: {total}")
     print(f"Archivo: {a.xlsx}")
