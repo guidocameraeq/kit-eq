@@ -16,3 +16,6 @@ desktop.ini
 
 # Configuración local de Claude
 settings.local.json
+
+# Paquetes para subir a Cowork (se generan con herramientas/empaquetar.py)
+dist/
