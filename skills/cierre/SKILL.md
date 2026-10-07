@@ -21,7 +21,7 @@ La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito
 ## Pasos
 
 1. **Repasar la conversación**: qué se hizo, qué se decidió, qué archivos salieron en `resultados/`, qué se probó y no anduvo, qué quedó pendiente.
-2. **Mostrar el borrador** de lo que vas a escribir (las 4 secciones de abajo, cortas) y pedir el OK. Si la persona corrige algo, lo que dice ella manda.
+2. **Primero mostrás, después escribís.** En esta respuesta solo mostrás el borrador (las 4 secciones de abajo, cortas, más la línea del CHANGELOG y, si corresponde, los pasos propuestos para la receta del punto 5) y terminás con *"¿Lo anoto así?"*. **No escribas ningún archivo en la misma respuesta.** Recién con el sí, escribís. Si la persona corrige algo, lo que dice ella manda.
 3. **Reescribir entero `SESSION_HANDOFF.md`** con este formato. Antes, leé el que hay: si tiene algo que no salió de un cierre (una nota que agregó la persona a mano, un pendiente viejo que sigue vivo), pasalo a la versión nueva y mostralo en el borrador. Nunca lo pierdas en silencio.
    ```
    # Dónde quedamos
@@ -45,7 +45,7 @@ La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito
 4. **Sumar una línea arriba de todo en `CHANGELOG.md`** (debajo del título y la nota): `- dd/mm/aaaa — qué hicimos y qué decidimos, en una línea.` Si ya hay una línea de hoy, completala en vez de agregar otra.
 5. **Receta:**
    - Si hay `RECETA.md` y hoy algo fue distinto (un paso nuevo, un control que falló, una excepción): preguntá *"¿Actualizo la receta?"* y mostrá el cambio. Con OK: aplicalo, subí la versión y sumá una fila al **Registro de cambios** con la fecha y el porqué.
-   - Si hay `RECETA.md` con los pasos todavía sin completar y hoy se hizo el proceso: proponé los pasos (acción + control + exacto/criterio) y aplicalos solo con OK.
+   - Si hay `RECETA.md` con los pasos todavía sin completar y hoy se hizo el proceso: proponé vos los pasos en el borrador, ya escritos como filas de la tabla (acción + control + exacto/criterio); no preguntes si querés proponerlos. Se aplican solo con OK.
    - Si no hay receta y el tema se repite: ofrecé armarla.
 6. **Avisar** en 2 líneas: qué quedó anotado y *"Para seguir: conversación nueva en esta carpeta y decís **inicio**."*
 
