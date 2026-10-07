@@ -1,0 +1,13 @@
+{
+  "name": "kit-eq",
+  "owner": {
+    "name": "eQ"
+  },
+  "plugins": [
+    {
+      "name": "kit-eq",
+      "source": "./",
+      "description": "El método de la carpeta para trabajar con Claude en la oficina: configurar, capataz, inicio, cierre y reportes."
+    }
+  ]
+}

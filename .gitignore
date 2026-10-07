@@ -1,0 +1,18 @@
+# Datos privados: NUNCA van al repo (el repo es público)
+conexion-eq.json
+vistas.md
+*.odc
+
+# Resultados y archivos de prueba
+resultados/
+*.xlsx
+*.csv
+
+# Basura de Office y del sistema
+~$*
+*.tmp
+Thumbs.db
+desktop.ini
+
+# Configuración local de Claude
+settings.local.json
