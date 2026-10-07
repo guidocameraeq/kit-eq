@@ -23,6 +23,8 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+# Que los mensajes con tildes y ñ lleguen bien a Claude (si no, salen como "pesta�a").
+try { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 } catch { }
 
 function Salir([string]$mensaje, [int]$codigo) {
   Write-Output $mensaje
@@ -31,8 +33,18 @@ function Salir([string]$mensaje, [int]$codigo) {
 
 # --- 1. Solo lectura: un solo SELECT -------------------------------------
 $q = $Consulta.Trim()
-$sinComentarios = ($q -replace '(?s)/\*.*?\*/', ' ') -replace '--[^\r\n]*', ' '
-$plano = ($sinComentarios -replace "'[^']*'", "''").Trim().TrimEnd(';').Trim()
+# Una sola pasada, de izquierda a derecha, como lee SQL Server: textos entre comillas,
+# nombres entre [corchetes] o "comillas dobles" y comentarios. Si se hiciera en dos
+# pasadas, un texto como '--' o '/*' escondería lo que viene detrás (por ejemplo un DROP).
+$token = [regex]'(?s)''(?:[^'']|'''')*''|\[(?:[^\]]|\]\])*\]|"(?:[^"]|"")*"|--[^\r\n]*|/\*.*?\*/'
+$plano = $token.Replace($q, {
+  param($m)
+  $t = $m.Value
+  if ($t.StartsWith("'")) { "''" }
+  elseif ($t.StartsWith('[') -or $t.StartsWith('"')) { 'x' }
+  else { ' ' }
+})
+$plano = $plano.Trim().TrimEnd(';').Trim()
 
 if ($plano -notmatch '^(?i)(SELECT|WITH)\b') {
   Salir "FRENADO: la consulta tiene que empezar con SELECT (o WITH). Este kit solo lee." 2
@@ -40,7 +52,7 @@ if ($plano -notmatch '^(?i)(SELECT|WITH)\b') {
 if ($plano.Contains(';')) {
   Salir "FRENADO: hay mas de una instruccion (punto y coma en el medio). Va una sola consulta." 2
 }
-$prohibidas = 'INSERT','UPDATE','DELETE','MERGE','DROP','ALTER','CREATE','TRUNCATE','EXEC','EXECUTE','GRANT','REVOKE','DENY','BACKUP','RESTORE','INTO','OPENROWSET','OPENDATASOURCE','OPENQUERY','SHUTDOWN','DBCC','RECONFIGURE','WAITFOR'
+$prohibidas = 'INSERT','UPDATE','DELETE','MERGE','DROP','ALTER','CREATE','TRUNCATE','EXEC','EXECUTE','GRANT','REVOKE','DENY','BACKUP','RESTORE','INTO','OPENROWSET','OPENDATASOURCE','OPENQUERY','SHUTDOWN','DBCC','RECONFIGURE','WAITFOR','KILL','CHECKPOINT','SETUSER'
 foreach ($p in $prohibidas) {
   if ($plano -match "(?i)\b$p\b") {
     Salir "FRENADO: la consulta usa '$p'. Este kit solo hace SELECT de lectura." 2
@@ -54,7 +66,11 @@ if ($plano -match '(?i)\b(sp_|xp_)\w*') {
 if (-not (Test-Path -LiteralPath $Conexion)) {
   Salir "FALTA CONEXION: no encuentro '$Conexion'. Lo copia la skill 'configurar' desde la carpeta compartida." 3
 }
-$c = Get-Content -LiteralPath $Conexion -Raw -Encoding UTF8 | ConvertFrom-Json
+try {
+  $c = Get-Content -LiteralPath $Conexion -Raw -Encoding UTF8 | ConvertFrom-Json
+} catch {
+  Salir "CONEXION ROTA: '$Conexion' esta mal escrito (ojo: en el nombre del servidor la barra invertida va doble, SERVIDOR\\INSTANCIA). Avisale a Guido." 3
+}
 foreach ($campo in 'servidor', 'base', 'autenticacion') {
   if (-not $c.$campo) { Salir "CONEXION INCOMPLETA: falta el dato '$campo' en $Conexion." 3 }
 }
@@ -69,6 +85,7 @@ if ($c.autenticacion -eq 'windows') {
   $b['Integrated Security'] = $true
 } else {
   if (-not $c.usuario) { Salir "CONEXION INCOMPLETA: falta 'usuario' en $Conexion." 3 }
+  if (-not $c.clave) { Salir "CONEXION INCOMPLETA: falta 'clave' en $Conexion." 3 }
   $b['User ID'] = $c.usuario
   $b['Password'] = $c.clave
 }
@@ -91,12 +108,18 @@ if ($SoloProbar) {
 
 # --- 3. Consulta y CSV --------------------------------------------------
 try {
+  # Cinturón y tiradores: la consulta corre dentro de una transacción que SIEMPRE se
+  # deshace. Si algo se le escapara al filtro de arriba, igual no queda escrito nada.
+  # (La garantía principal es el usuario de solo lectura del servidor.)
+  $tx = $cn.BeginTransaction()
   $cmd = $cn.CreateCommand()
+  $cmd.Transaction = $tx
   $cmd.CommandText = $q.TrimEnd(';')
   $cmd.CommandTimeout = 120
   $da = New-Object System.Data.SqlClient.SqlDataAdapter $cmd
   $tabla = New-Object System.Data.DataTable
   [void]$da.Fill($tabla)
+  $tx.Rollback()
 } catch {
   Salir ("ERROR EN LA CONSULTA: " + $_.Exception.Message) 6
 } finally {
