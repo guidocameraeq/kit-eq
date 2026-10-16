@@ -1,5 +1,12 @@
 # CHANGELOG — kit eQ
 
+## 0.2.4 de `kit-eq-code` — 16/10/2026 — la carpeta Reportes es siempre la misma
+
+### Cambiado
+- `consultar.ps1` busca la conexión en `Documentos\Reportes\conexion-eq.json` y deja los resultados en `Documentos\Reportesesultados\`, **se abra la sesión de Code en la carpeta que sea**. Antes dependía de que Claude usara la ruta completa. Una ruta que no sea completa se toma desde esa carpeta.
+- `reportes` ya no pasa `-Conexion` y usa la ruta que informa el script para armar el Excel.
+- `probar_consultar.ps1` suma la prueba de que, sin `-Conexion`, busca en la carpeta Reportes.
+
 ## 0.2.3 de `kit-eq-code` — 16/10/2026 — catálogo de vistas dentro del kit
 
 ### Cambiado

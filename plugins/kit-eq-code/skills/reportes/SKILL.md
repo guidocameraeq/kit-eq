@@ -24,7 +24,7 @@ Convertís un pedido en criollo en una consulta de **solo lectura** a una vista 
 
 Si falta algo, no improvises: decí qué falta y sugerí correr `configurar` o pedírselo a Guido.
 
-Los comandos de abajo usan rutas que empiezan con `.\` (por ejemplo `.\conexion-eq.json`): valen si la sesión de Code está abierta **en la carpeta Reportes**. Si está abierta en otra carpeta, usá la ruta completa de Reportes en todos los comandos (no copies `conexion-eq.json` a otro lado).
+**Da igual en qué carpeta esté abierta la sesión de Code.** `consultar.ps1` busca siempre la conexión en `Documentos\Reportes\conexion-eq.json` y deja los resultados en `Documentos\Reportes\resultados\`: una ruta que no sea completa la toma desde esa carpeta. No copies `conexion-eq.json` a otro lado y no le pases `-Conexion`.
 
 Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta base de esta skill):
 - `scripts/consultar.ps1`: corre un solo SELECT y deja un CSV. Frena cualquier otra cosa y avisa en criollo si no hay red. **Solo deja pasar consultas sobre las vistas de la lista de `vistas.md`**, escritas como `dbo.NombreDeLaVista` y unidas con `JOIN` (no con coma): si aparece otra tabla o vista, frena con `FRENADO`.
@@ -36,7 +36,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 2. **Plan corto y OK.** Contá en 3 líneas: de qué vista sale, qué filtro y qué columnas, y cómo lo vas a controlar. Esperá el OK.
 3. **Probar la red** (la primera vez en la conversación):
    ```
-   powershell -NoProfile -ExecutionPolicy Bypass -File "<base de la skill>\scripts\consultar.ps1" -Conexion ".\conexion-eq.json" -Consulta "SELECT 1" -Salida ".\resultados\x.csv" -SoloProbar
+   powershell -NoProfile -ExecutionPolicy Bypass -File "<base de la skill>\scripts\consultar.ps1" -Consulta "SELECT 1" -Salida "resultados\x.csv" -SoloProbar
    ```
    Si dice **SIN RED**, decí: *"No llego al servidor. ¿Estás en la oficina o con la VPN prendida?"* y pará. No reintentes en loop.
    Usá siempre `powershell` (Windows PowerShell 5.1, que trae SqlClient), no `pwsh`.
@@ -44,7 +44,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 4. **Consultar.** Armá un único `SELECT` sobre la vista, con `TOP` si es una prueba. Nombre de salida: `resultados\AAAA-MM-DD_tema_v01.csv`. Corré `consultar.ps1` sin `-SoloProbar`.
 5. **Pasar a Excel:**
    ```
-   py "<base de la skill>\scripts\csv_a_excel.py" --csv "resultados\...csv" --xlsx "resultados\...xlsx" --origen "<vista>" --consulta "<la consulta>" --sumar "<columnas de importes>"
+   py "<base de la skill>\scripts\csv_a_excel.py" --csv "<la ruta que dijo consultar.ps1 en la línea Archivo:>" --xlsx "<la misma ruta, terminada en .xlsx>" --origen "<vista>" --consulta "<la consulta>" --sumar "<columnas de importes>"
    ```
    En `--sumar` poné solo las columnas que tiene sentido sumar (importes, cantidades), no códigos ni números de cliente. Si `py` no existe, probá `python`; si tampoco, decí que falta correr `configurar`.
 6. **Verificar antes de entregar** (regla de oro):
