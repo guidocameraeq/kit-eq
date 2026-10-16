@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img alt="versión 0.2.1" src="https://img.shields.io/badge/versi%C3%B3n-0.2.1-E9A23B">
+  <img alt="kit-eq 0.2.1" src="https://img.shields.io/badge/kit--eq-0.2.1-E9A23B"> <img alt="kit-eq-code 0.2.4" src="https://img.shields.io/badge/kit--eq--code-0.2.4-E9A23B">
   <img alt="pensado para Cowork y Code" src="https://img.shields.io/badge/pensado%20para-Cowork%20%C2%B7%20Code-26355C">
   <img alt="licencia MIT" src="https://img.shields.io/badge/licencia-MIT-6B7A99">
 </p>
@@ -124,7 +124,7 @@ El Capataz conoce esta **carpeta modelo**. Si la carpeta está vacía la arma, y
 
 ## Estado
 
-**Versión 0.2.1.**
+**Versiones: `kit-eq` 0.2.1 y `kit-eq-code` 0.2.4.** Cada paquete lleva su propio número.
 - **Probado en Code:** se validó con la herramienta oficial de plugins y se ensayó con una alumna ficticia (bienvenida, carpeta nueva, carpeta a medio armar, guía y cierre).
 - **NO VERIFICADO en Cowork Pro:** la instalación desde la tienda y el uso del kit. Se confirma en el primer uso.
 
