@@ -31,9 +31,11 @@ Pedile el archivo `kit-eq.zip` a quien da el curso y subilo en **Customize** > *
 > NO VERIFICADO en cuentas Pro: los nombres exactos de los botones y que "Add marketplace" esté disponible. Si algo no coincide, avisá con una captura.
 
 ## 2. La primera vez
-1. Creá una carpeta para tu primer tema de trabajo (o copiá la **carpeta modelo** del curso) y abrí Cowork con esa carpeta.
+1. Creá una **carpeta vacía** para tu primer tema de trabajo, por ejemplo `Documentos\Claude\Conciliacion-bancaria`, y abrí Cowork con esa carpeta. No hace falta copiar nada.
 2. Escribí: **"Capataz, es mi primera vez"**.
-3. El Capataz te hace unas pocas preguntas, arma la carpeta con su `CLAUDE.md` y te explica cómo seguir.
+3. El Capataz te hace unas pocas preguntas, arma la **carpeta modelo** con su `CLAUDE.md` y te explica cómo seguir.
+
+¿Ya tenés una copia de la carpeta modelo del curso? Abrila en Cowork y decí **inicio**: el Capataz completa lo que falta.
 
 ## 3. El día a día: tres palabras
 

@@ -13,12 +13,12 @@ Decilo así, con tus palabras:
 
 ## Paso 2: la carpeta
 
-- **Si no hay una carpeta conectada** (Cowork) o la sesión no está en una carpeta de trabajo (Code): pedí que creen una carpeta para su primer tema, con un nombre corto sin tildes (por ejemplo `Conciliacion-proveedores`), y que abran la conversación ahí. Recomendá tener todas las carpetas de temas juntas dentro de una carpeta madre (por ejemplo `Documentos\Claude\`). Si ya usan la **carpeta modelo** que les pasaron, que copien esa y la conecten. Pará hasta que vuelvan con la carpeta.
+- **Si no hay una carpeta conectada** (Cowork) o la sesión no está en una carpeta de trabajo (Code): pedí que creen una **carpeta vacía** para su primer tema, con un nombre corto sin tildes (por ejemplo `Conciliacion-proveedores`), dentro de una carpeta madre para todos sus temas (por ejemplo `Documentos\Claude\`), y que abran la conversación con esa carpeta. **No hace falta copiar nada:** la carpeta modelo la armás vos. Pará hasta que vuelvan con la carpeta.
 - **Si hay carpeta:** seguí.
 
 ## Paso 3: armar la primera carpeta
 
-Hacé el trabajo **Arrancar** completo: leé `trabajos/arrancar.md` y seguilo. Si la carpeta es la carpeta modelo copiada, Arrancar la completa.
+Hacé el trabajo **Arrancar** completo: leé `trabajos/arrancar.md` y seguilo. Arrancar se fija qué hay: si la carpeta está vacía arma la carpeta modelo, y si ya tiene una copia de la carpeta modelo del curso, la completa.
 
 ## Paso 4: cómo se sigue
 

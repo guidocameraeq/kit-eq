@@ -90,7 +90,7 @@ kit-eq/                              ← el repo = la tienda
 | Necesita | De dónde lo saca |
 |---|---|
 | Los archivos del tema | Solo de la carpeta conectada (Cowork) o de la carpeta de la sesión (Code). No busca por el disco |
-| Sus trabajos y plantillas | De su carpeta en el kit (`trabajos/`, `plantillas/`) |
+| Sus trabajos y la carpeta modelo | De su carpeta en el kit (`trabajos/`, `carpeta-modelo/`) |
 | Lo que ya sabe de la persona | De sus instrucciones globales ("Mi puesto"), que Claude ya tiene en cada conversación. **No lo repregunta: lo confirma en una línea** |
 | `anotar`, `ordenar` y `verificar` | Las llama por nombre. Vienen en el mismo paquete: si tienen el Capataz, las tienen |
 | Qué skills hay instaladas | De la lista de skills que Claude ve en cada conversación, cruzada con el catálogo de la **Guía** (`trabajos/guia.md`), que se actualiza con cada versión del kit |
@@ -113,7 +113,17 @@ Hay dos niveles, y no se repiten:
 | Cómo se trabaja acá | Las reglas del método: copias, verificar, nada se borra, un tema por conversación | Fijo |
 | Inicio y cierre | Qué hacer al empezar y al terminar | Fijo |
 
-La pregunta 5 es si ya hay archivos sueltos. Son 5 preguntas como máximo, y lo que la persona ya dijo no se repregunta. La plantilla vive en `capataz/plantillas/CLAUDE.md`.
+La pregunta 5 es si ya hay archivos sueltos. Son 5 preguntas como máximo, y lo que la persona ya dijo no se repregunta.
+
+## La carpeta modelo
+- **Vive en el kit, dentro del Capataz:** `plugins/kit-eq/skills/capataz/carpeta-modelo/`. Es la única. El material de las clases la toma de acá, no tiene una propia.
+- **Piezas:** `CLAUDE.md`, `LEEME-PRIMERO.md`, `SESSION_HANDOFF.md`, `CHANGELOG.md`, `originales/`, `resultados/` y, si el tema se repite, `RECETA.md`.
+- **El Capataz la sabe de memoria y se fija qué hay:**
+  - Si la carpeta está vacía, la arma.
+  - Si está a medio armar (por ejemplo, la copia de la Clase 0 con huecos `[...]`), completa los huecos y suma las piezas que faltan, sin pisar lo escrito.
+  - Si ya está completa, ofrece retomar.
+  - Si es la carpeta madre de todos los temas, arma el tema nuevo como subcarpeta.
+- **`inicio` también la arma:** si la persona dice "inicio" en una carpeta vacía o a medio armar, no se frena: avisa y sigue con el Arrancar del Capataz.
 
 ## SQL Server
 - **Solo en Code.** Cowork en Pro corre en la nube y no llega a la red de la oficina (ver la tabla de la plataforma). Si en Cowork piden datos del sistema, Claude explica que se sacan en Code y da la frase exacta para pedirlo.
@@ -152,4 +162,4 @@ Una skill creada para una sola persona es **personal** y queda en su cuenta. Si 
 3. Subir el kit como `.zip` con Upload plugin (plan B).
 4. Con "Sync automatically" prendido: ¿un cambio llega sin subir la versión, o hace falta subirla?
 5. ¿Claude en Cowork ve las instrucciones globales, para que el Capataz no repregunte el puesto?
-6. Comparar la carpeta modelo que ya usan los alumnos con las plantillas del Capataz: tienen que ser la misma.
+6. Que el material de las próximas clases use la carpeta modelo del kit en vez de una propia del taller.

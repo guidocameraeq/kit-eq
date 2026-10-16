@@ -6,11 +6,15 @@
 - **Dos paquetes en una tienda.** `plugins/kit-eq/` (capataz, inicio y cierre: Cowork y Code) y `plugins/kit-eq-code/` (configurar y reportes: solo Code). El `marketplace.json` lista los dos. Los archivos de mantenimiento (`docs/`, `herramientas/`, `CLAUDE.md`) ya no se instalan.
 - **`capataz`** pasa a ser corto: decide qué trabajo toca y lee solo ese archivo de `trabajos/`.
   - **Bienvenida** (nuevo): la primera vez explica el método, arma la primera carpeta y enseña el ciclo inicio y cierre.
-  - **Arrancar**: no repregunta lo que ya está en las instrucciones de la persona. **Completa la carpeta modelo copiada** si el `CLAUDE.md` está sin llenar, en vez de rechazarla.
+  - **Arrancar**: no repregunta lo que ya está en las instrucciones de la persona. **Sabe cuál es la carpeta modelo** (`capataz/carpeta-modelo/`, antes `plantillas/`) y se fija pieza por pieza qué hay:
+    - Carpeta vacía: la arma.
+    - A medio armar (por ejemplo, la copia de la Clase 0): completa los huecos y suma lo que falta, sin pisar lo escrito.
+    - Ya armada: ofrece retomar.
+    - Carpeta madre: arma el tema como subcarpeta.
   - **Guía** (nuevo): qué se puede hacer, por tareas y con la frase para pedirlo.
 - **Plantilla del `CLAUDE.md`** con secciones nuevas: "Quién y para quién", "Cada cuánto", "Reglas del negocio" y "Palabras de acá". Las dos últimas crecen con el uso.
 - **`cierre`** propone las reglas del negocio y las palabras nuevas para el `CLAUDE.md`, siempre con OK.
-- **`inicio`** detecta la carpeta modelo sin completar y ofrece completarla con el Capataz.
+- **`inicio`** en una carpeta vacía o a medio armar no se frena: avisa y sigue directo con el Arrancar del Capataz.
 - **`README.md`** es la guía del alumno: instalar, la primera vez, las tres palabras, actualizaciones y qué hacer si algo falla.
 - **`revisar.py`** controla cada entrada del marketplace contra su `plugin.json`, con `name` y `version`. **`empaquetar.py`** arma `dist/kit-eq.zip` para el plan B (Upload plugin).
 
@@ -21,11 +25,13 @@
   - **Bienvenida completa:** método en 5 líneas, no repregunta el puesto, 5 preguntas de a una, el plano, no escribe sin OK y arma la carpeta con `RECETA.md`, sin `{{` sin reemplazar. La regla del negocio que surgió en la charla quedó anotada sola.
   - **Carpeta modelo con `[completar]`:** la reconoce y arranca las preguntas sin pisar nada.
   - **Guía:** responde por tareas y avisa que las de Code no están instaladas.
+  - **"inicio" en una carpeta vacía:** arranca las preguntas para armar la carpeta modelo, sin escribir nada antes del plano.
+  - **"inicio" en una copia de la carpeta modelo de la Clase 0** (huecos `[...]` y un Excel en `originales/`): la completó, sumó `LEEME-PRIMERO.md`, `RECETA.md` y `resultados/`, y no tocó el Excel.
+  - **`cierre` después de trabajar:** propuso una regla del negocio y una palabra para el `CLAUDE.md`, no inventó pasos de receta y no escribió nada sin OK.
 
 ### NO VERIFICADO
 - Todo en Cowork Pro: Add marketplace, Sync automatically y Upload plugin. Tampoco si Cowork espera a que suba la versión.
-- Que `cierre` proponga reglas y palabras en un caso real: el texto está, pero no se ensayó.
-- Que la plantilla coincida con la carpeta modelo del curso: está en el taller y no se pudo comparar.
+- La carpeta modelo de la Clase 0 se ensayó con una copia reconstruida (la original está en el taller y no se pudo leer desde la nube).
 - Pendiente de la etapa A: la conexión al SQL una sola vez, para todos los proyectos (`configurar` y `reportes` siguen como en 0.1.1).
 
 ## 0.1.1 — 07/10/2026 (ronda de pruebas)

@@ -11,7 +11,7 @@ La persona quiere saber qué puede hacer con el kit y cómo. Seguí las **reglas
 | Si querés... | Decí algo como... | Skill |
 |---|---|---|
 | Empezar de cero, la primera vez | *"Capataz, es mi primera vez"* | `capataz` (Bienvenida) |
-| Armar la carpeta de un tema nuevo, o completar la carpeta modelo | *"Capataz, armame una carpeta para la conciliación de proveedores"* | `capataz` (Arrancar) |
+| Armar la carpeta de un tema nuevo (en una carpeta vacía alcanza con decir *"inicio"*), o completar la carpeta modelo del curso | *"Capataz, armame una carpeta para la conciliación de proveedores"* | `capataz` (Arrancar) |
 | Retomar donde quedaste | *"inicio"* (en una conversación nueva, en la carpeta del tema) | `inicio` |
 | Dejar anotado lo que hiciste | *"cierre"* | `cierre` |
 | Ver qué podés hacer | *"¿Qué puedo hacer con el kit?"* | `capataz` (Guía) |
