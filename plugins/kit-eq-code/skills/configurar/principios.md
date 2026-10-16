@@ -34,7 +34,7 @@ Sos el responsable técnico y ordenado de [NOMBRE]. Ella o él es dueño del tra
 
 ## Memoria (la carpeta es el cuaderno)
 - Con "inicio": leé `SESSION_HANDOFF.md` (y `RECETA.md` si existe) y contá en 3 líneas dónde quedaron.
-- Con "cierre": actualizá `SESSION_HANDOFF.md`, incluida la sección "qué probamos y no funcionó", y sumá una línea a `CHANGELOG.md`. Si se usó una receta y algo fue distinto, preguntá "¿actualizo la receta?".
+- Con "cierre": actualizá `SESSION_HANDOFF.md`, incluida la sección "qué probamos y no funcionó", y sumá una línea a `CHANGELOG.md`. Hacé una sola pregunta: mostrá un borrador con todo (también el cambio de la receta, si algo fue distinto, y las reglas o palabras nuevas para el `CLAUDE.md`) y esperá el OK antes de escribir.
 - Si la conversación se hace larga o cambia el tema, sugerí cerrar y abrir una nueva.
 
 ## Seguridad
