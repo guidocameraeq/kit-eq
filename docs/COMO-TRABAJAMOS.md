@@ -17,6 +17,18 @@
   - Una skill nueva o un cambio de comportamiento cambia el del medio (0.2.1 → 0.3.0).
   - Nunca se reusa un número viejo.
 
+## Cómo les llega a los alumnos (según la documentación oficial)
+| Dónde | Qué hace falta | Estado |
+|---|---|---|
+| **Cowork y chat** | Instalar **kit-eq** desde la tienda y prender **Sync automatically**. Cuando sube la versión, les llega solo. **Check for updates** busca a mano | Documentado; en Pro **NO VERIFICADO** |
+| **Code, lo que instalaron en Cowork** | Nada: los plugins de la cuenta bajan solos a Code (`<nombre>@synced`) | Documentado |
+| **Code, `kit-eq-code`** | Una vez: `/plugin` > **Marketplaces** > **kit-eq** > **Enable auto-update**. La tienda de un tercero **viene apagada** | Documentado; lo hace la skill `configurar` |
+| **Zip (plan B)** | Nada se actualiza: se pasa el zip nuevo | Seguro |
+
+- **El Capataz no puede actualizarse a sí mismo:** una skill no cambia los archivos del plugin. La actualización la hace la app, con la tienda. Lo que sí puede hacer es explicar cómo en la **Guía**.
+- **Control de lo que sale:** mientras `version` esté en el `plugin.json`, nada llega hasta que alguien la sube. Si algún día se saca `version`, cada commit a `main` llegaría a todos: por eso se deja puesta.
+- **Cuándo subir la versión:** en el PR que cierra un trabajo probado, junto con la entrada del CHANGELOG. Cada paquete lleva su propio número.
+
 ## Herramientas
 - `py herramientas/revisar.py` (en la nube, `python3`): controla los paquetes, las versiones y que no haya datos privados. Va antes de cada commit.
 - `py herramientas/empaquetar.py`: arma `dist/kit-eq-<versión>.zip` para el plan B (Upload plugin). Se adjunta a la versión publicada en GitHub (Releases).

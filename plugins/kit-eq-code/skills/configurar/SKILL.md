@@ -39,6 +39,15 @@ Con OK: `py -m pip install --user openpyxl pandas python-docx python-pptx pypdf 
 Verificá con `py -c "import openpyxl, docx, pptx, pypdf; print('ok')"`.
 **NO VERIFICADO:** que la red de la empresa deje bajar librerías (si da error de conexión o de certificado, anotalo como pendiente para Guido; no desactives controles de seguridad).
 
+### 3. Mantener el kit al día (Code)
+En Code las tiendas de terceros **no se actualizan solas**: hay que prender la actualización automática una vez. Guialo así, con OK en cada paso:
+1. **El Capataz, inicio y cierre (`kit-eq`) no se instalan acá.** Si lo instaló en Customize > Plugins, ya llega a Code solo, desde la cuenta (aparece como `kit-eq@synced`). Si no está, avisale que primero lo instale en Customize > Plugins (guía: sección 1 de `docs/GUIA.md`).
+2. Pedile que pegue en el cuadro de Code, si la tienda todavía no está: `/plugin marketplace add guidocameraeq/kit-eq`.
+3. Instalá `kit-eq-code` con: `/plugin install kit-eq-code@kit-eq`.
+4. Prendé la actualización automática: `/plugin` > pestaña **Marketplaces** > **kit-eq** > **Enable auto-update**.
+5. Para buscar una versión nueva a mano: `/plugin marketplace update kit-eq`, y después en `/plugin` > **Installed** > **kit-eq-code** > **Update now**.
+Según la documentación oficial de Claude Code, la tienda de un tercero viene con la actualización automática apagada y un plugin recibe cambios solo cuando sube su `version`. **NO VERIFICADO:** que estos menús sean iguales en la pestaña Code de la app de escritorio (ahí figuran en **+** > **Plugins** > **Manage plugins**). Si no los encuentra, anotalo como pendiente para Guido.
+
 ### 3. Skills oficiales de documentos (Excel, Word, PowerPoint, PDF)
 Son las de Anthropic (repositorio `anthropics/skills`). En Code se agregan como plugin. Pedile a la persona que pegue, de a una, en el cuadro de Code:
 ```
