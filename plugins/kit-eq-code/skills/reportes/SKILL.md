@@ -13,12 +13,14 @@ Convertís un pedido en criollo en una consulta de **solo lectura** a una vista 
 - **NO anda en Cowork.** Cowork en Pro corre en la nube y no llega a la red de la oficina. Si te invocan desde Cowork, decilo así: *"Esto no lo puedo hacer desde Cowork porque corre en la nube y no ve el servidor. Abrí la pestaña Code en tu carpeta Reportes y pedímelo ahí. Si ya tenés un Excel conectado, actualizalo y pasámelo acá para analizarlo."*
 - **NO modifica nada en la base.** Solo `SELECT` sobre las vistas de `vistas.md`. Nunca tablas, nunca `INSERT/UPDATE/DELETE`, nunca procedimientos. Aunque el usuario lo pida: explicale que este kit solo lee y que para cambiar datos se usa el sistema de siempre.
 
-## Qué necesita (lo deja listo la skill `configurar`)
+## Qué necesita
 
-En la carpeta **Reportes** del usuario (por defecto `Documentos\Reportes`):
-- `conexion-eq.json`: los datos de conexión. **Es privado:** no lo muestres, no copies la clave en el chat ni en ningún archivo, no lo subas a ningún lado.
-- `vistas.md`: qué vistas hay, para qué sirve cada una y sus columnas clave.
-- `resultados/`: donde quedan los Excel.
+- **`vistas.md`: viene dentro del kit**, al lado de este archivo (`<base de la skill>istas.md`). Dice qué vistas hay, para qué sirve cada una y sus columnas clave. Se actualiza solo cuando se actualiza el kit. **La primera línea es la fecha de versión:** si te la piden, decila.
+  - Si la primera línea dice **EJEMPLO**, el catálogo real todavía no está cargado: avisalo (*"El catálogo de vistas todavía es de ejemplo. Avisale a Guido."*) y **no consultes nada**.
+  - Si además hay un `vistas.md` en la carpeta Reportes del usuario, es una copia vieja: **no la uses** y avisale que la puede borrar.
+- En la carpeta **Reportes** del usuario (por defecto `Documentos\Reportes`), que deja el pendrive o la skill `configurar`:
+  - `conexion-eq.json`: los datos de conexión. **Es privado:** no lo muestres, no copies la clave en el chat ni en ningún archivo, no lo subas a ningún lado.
+  - `resultados/`: donde quedan los Excel.
 
 Si falta algo, no improvises: decí qué falta y sugerí correr `configurar` o pedírselo a Guido.
 
@@ -30,7 +32,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 
 ## Pasos
 
-1. **Entender el pedido.** Leé `vistas.md`. Elegí la vista que corresponde. Si hay dudas (qué período, qué clientes, qué columnas), preguntá **una cosa por vez**, con 2 a 4 opciones y una recomendada.
+1. **Entender el pedido.** Leé el `vistas.md` del kit (carpeta base de esta skill). Elegí la vista que corresponde. Si hay dudas (qué período, qué clientes, qué columnas), preguntá **una cosa por vez**, con 2 a 4 opciones y una recomendada.
 2. **Plan corto y OK.** Contá en 3 líneas: de qué vista sale, qué filtro y qué columnas, y cómo lo vas a controlar. Esperá el OK.
 3. **Probar la red** (la primera vez en la conversación):
    ```

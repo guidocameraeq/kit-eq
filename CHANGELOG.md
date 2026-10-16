@@ -1,5 +1,17 @@
 # CHANGELOG — kit eQ
 
+## 0.2.3 de `kit-eq-code` — (borrador, sin publicar) catálogo de vistas dentro del kit
+
+### Cambiado
+- `vistas.md` viaja dentro del kit (`skills/reportes/vistas.md`) y se actualiza con cada versión. Antes tenía que copiarlo cada alumno. La conexión (`conexion-eq.json`) sigue privada y por PC.
+- `reportes` lee el catálogo del kit, avisa si todavía es un EJEMPLO y no consulta, e ignora copias viejas en Reportes.
+- `configurar` ya no copia `vistas.md`.
+- `revisar.py` permite `vistas.md` solo en esa ruta.
+- Sigue en 0.2.3 hasta cargar el catálogo real; hoy `vistas.md` es un EJEMPLO.
+
+### NO VERIFICADO
+- Que la skill encuentre el catálogo en la carpeta base del plugin instalado, en Code.
+
 ## 0.2.2 de `kit-eq-code` — 16/10/2026 (actualizaciones en Code)
 
 ### Cambiado

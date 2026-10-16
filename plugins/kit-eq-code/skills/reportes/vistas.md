@@ -1,6 +1,8 @@
+Versión: 2026-10-16 · EJEMPLO
+
 # Vistas disponibles (EJEMPLO)
 
-> El archivo de verdad se llama `vistas.md`, lo arma Guido y vive en la carpeta compartida (nunca en este repo).
+> **ESTE ES UN EJEMPLO con vistas inventadas.** Guido lo reemplaza por el catálogo real antes de publicar. Solo lleva estructura: nunca datos de clientes ni importes.
 > Una sección por vista: para qué sirve, columnas clave y un ejemplo de pedido en criollo.
 
 ## dbo.VistaEjemploSaldos

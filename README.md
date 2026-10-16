@@ -110,7 +110,7 @@ El Capataz conoce esta **carpeta modelo**. Si la carpeta está vacía la arma, y
 - **No escribe sin mostrar antes.** Las carpetas, el `CLAUDE.md` y lo que anota el cierre se escriben con tu OK.
 - **Controla los números** contra la fuente antes de entregarlos.
 - **La base de datos solo se lee.** `reportes` hace consultas de lectura sobre vistas y nunca modifica nada.
-- **Este repo no tiene datos de la empresa.** La conexión y el catálogo de vistas son privados y viven fuera del repo.
+- **Este repo no tiene datos de la empresa.** La conexión es privada y vive en cada PC (nunca en el repo). El catálogo de vistas lleva solo estructura (nombres y columnas), sin datos, y viaja dentro del kit.
 
 ## Documentación
 

@@ -1,6 +1,6 @@
 {
   "name": "kit-eq-code",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/guidocameraeq/kit-eq",
   "description": "SOLO PARA CODE (no lo instales en Cowork). Configura la PC una vez (configurar) y saca reportes en Excel desde las vistas del SQL Server de la empresa, en solo lectura (reportes).",
   "author": {
