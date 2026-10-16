@@ -15,7 +15,7 @@ Convertís un pedido en criollo en una consulta de **solo lectura** a una vista 
 
 ## Qué necesita
 
-- **`vistas.md`: viene dentro del kit**, al lado de este archivo (`<base de la skill>istas.md`). Dice qué vistas hay, para qué sirve cada una y sus columnas clave. Se actualiza solo cuando se actualiza el kit. **La primera línea es la fecha de versión:** si te la piden, decila.
+- **`vistas.md`: viene dentro del kit**, al lado de este archivo (`<base de la skill>\vistas.md`). Dice qué vistas hay, para qué sirve cada una y sus columnas clave. Se actualiza solo cuando se actualiza el kit. **La primera línea es la fecha de versión:** si te la piden, decila.
   - Si la primera línea dice **EJEMPLO**, el catálogo real todavía no está cargado: avisalo (*"El catálogo de vistas todavía es de ejemplo. Avisale a Guido."*) y **no consultes nada**.
   - Si además hay un `vistas.md` en la carpeta Reportes del usuario, es una copia vieja: **no la uses** y avisale que la puede borrar.
 - En la carpeta **Reportes** del usuario (por defecto `Documentos\Reportes`), que deja el pendrive o la skill `configurar`:
