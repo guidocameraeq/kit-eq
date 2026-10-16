@@ -1,6 +1,6 @@
 ---
 name: configurar
-description: Deja lista la PC de un compañero para trabajar con el método de la carpeta - Python y librerías para Excel/Word/PDF, las skills oficiales de documentos, el CLAUDE.md global de Code con los principios y su puesto, la guía para pegar las instrucciones en Cowork y en el Perfil, y la carpeta Reportes con la conexión. Usar cuando dicen "configurar", "configurame la PC", "dejá todo listo" o al estrenar una PC. Corre en la pestaña Code. NO usar para arrancar un tema nuevo (eso es capataz).
+description: Deja lista la PC de un compañero para trabajar con el método de la carpeta - Python y librerías para Excel/Word/PDF, las skills oficiales de documentos, el CLAUDE.md global de Code con los principios y su puesto, la guía para pegar las instrucciones en Claude (también valen para Cowork), y la carpeta Reportes con la conexión. Usar cuando dicen "configurar", "configurame la PC", "dejá todo listo" o al estrenar una PC. Corre en la pestaña Code. NO usar para arrancar un tema nuevo (eso es capataz).
 ---
 
 # Configurar: dejar la PC lista (una sola vez)
@@ -26,7 +26,7 @@ Preparás la PC de un compañero que **no programa**. Le hablás de vos, en espa
 1. Nombre.
 2. Puesto y área (por ejemplo: administración y contabilidad, RRHH).
 3. Tareas habituales (3 a 5), sistemas y archivos que usa, a quién le reporta.
-4. Dónde está la **carpeta compartida** del curso (la ruta la da Guido). Si no la sabe, seguí y dejá los pasos 5 y 6 pendientes.
+4. Dónde está la **carpeta compartida** del curso (la ruta la da Guido). Si no la sabe, seguí y dejá el paso 6 pendiente.
 
 ### 1. Python
 - Revisá si está: `py --version` y, si no, `python --version`.
@@ -52,10 +52,10 @@ Los nombres se probaron el 07/10/2026 con la línea de comandos de Claude Code (
 3. El destino es `%USERPROFILE%\.claude\CLAUDE.md`. Si ya existe, mostrá la diferencia y preguntá: reemplazar / agregar al final / dejar como está.
 4. Mostrá el texto final y escribilo solo con OK.
 
-### 5. Instrucciones de Cowork y Perfil (lo hace la persona)
-Guialo así, con el mismo texto del paso 4:
-1. En la app, abrí **Configuración** (Settings) > **Cowork** > **Instrucciones globales** (Global instructions). Pegá el texto y guardá.
-2. En **Configuración** > **Perfil**, en el cuadro de preferencias, pegá el mismo texto (o la parte "Cómo hablar" + "Mi puesto" si no entra).
+### 5. Instrucciones de Claude (lo hace la persona)
+En la app nueva, el chat y Cowork comparten **un solo lugar** para las instrucciones. Guialo así, con el mismo texto del paso 4:
+1. En la app, abrí **Configuración** (Settings) > **General** > **Instrucciones para Claude** (Instructions for Claude). Pegá el texto y guardá. Va **una sola vez**: no lo pegues en dos lugares.
+2. Si ya había un texto de la Clase 0, mostrá la diferencia y preguntá: reemplazar / dejar como está.
 3. En **Configuración** > **Privacidad**, apagá **"Help improve Claude for everyone"** (ayudar a mejorar Claude).
 **NO VERIFICADO:** el nombre exacto de cada menú hoy (la app cambia seguido). Si no lo encuentra, que le avise a Guido; no adivines.
 

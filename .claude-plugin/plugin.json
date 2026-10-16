@@ -1,9 +1,0 @@
-{
-  "name": "kit-eq",
-  "version": "0.1.1",
-  "description": "Kit eQ: el método de la carpeta para trabajar con Claude en la oficina. Arranca carpetas (capataz), retoma y cierra (inicio y cierre), configura la PC (configurar) y saca reportes en Excel desde vistas de SQL Server en solo lectura (reportes).",
-  "author": {
-    "name": "eQ"
-  },
-  "keywords": ["oficina", "administracion", "metodo", "excel", "reportes"]
-}

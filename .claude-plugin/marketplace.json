@@ -9,8 +9,13 @@
   "plugins": [
     {
       "name": "kit-eq",
-      "source": "./",
-      "description": "El método de la carpeta para trabajar con Claude en la oficina: configurar, capataz, inicio, cierre y reportes."
+      "source": "./plugins/kit-eq",
+      "description": "Para todos, en Cowork y en Code: el Capataz (bienvenida, carpetas y guía), inicio y cierre."
+    },
+    {
+      "name": "kit-eq-code",
+      "source": "./plugins/kit-eq-code",
+      "description": "SOLO CODE, no lo instales en Cowork: configurar la PC y reportes en Excel desde el SQL de la empresa."
     }
   ]
 }

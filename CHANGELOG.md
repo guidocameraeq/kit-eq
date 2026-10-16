@@ -1,5 +1,75 @@
 # CHANGELOG — kit eQ
 
+## 0.2.0 — 16/10/2026 (para la Clase 1)
+
+### Para quien ya lo tenía
+- **Cowork:** si subiste skills sueltas en Customize > Skills (capataz, inicio, cierre), borralas y instalá el paquete desde la tienda (ver la guía de uso).
+- **Code:** `configurar` y `reportes` pasaron al paquete `kit-eq-code`: `/plugin install kit-eq-code@kit-eq`.
+
+### Cambiado
+- **Dos paquetes en una tienda:**
+  - `plugins/kit-eq/`: capataz, inicio y cierre, para Cowork y Code.
+  - `plugins/kit-eq-code/`: configurar y reportes, solo para Code.
+  - Los archivos de mantenimiento (`docs/`, `herramientas/`, `CLAUDE.md`) ya no se instalan.
+- **`capataz` pasa a ser corto:** decide qué trabajo toca y lee solo ese archivo de `trabajos/`.
+  - **Bienvenida** (nuevo): la primera vez explica el método, arma la primera carpeta y enseña el ciclo inicio y cierre.
+  - **Arrancar:** conoce la **carpeta modelo** (`capataz/carpeta-modelo/`, antes `plantillas/`) y revisa pieza por pieza qué hay:
+    - **Carpeta madre:** arma el tema como subcarpeta.
+    - **Documentos o el Escritorio:** no arma ahí.
+    - **Ya armada:** ofrece retomar.
+    - **A medio armar** (por ejemplo, la copia de la Clase 0): completa los huecos y suma lo que falta, sin pisar lo escrito.
+    - **Vacía:** la arma.
+  - **Arrancar** tampoco repregunta lo que ya está en las instrucciones de la persona.
+  - **Guía** (nuevo): qué se puede hacer, por tareas, con la frase para pedirlo.
+- **La plantilla del `CLAUDE.md`** suma "Quién y para quién", "Cada cuánto", "Reglas del negocio" y "Palabras de acá". Las dos últimas crecen con el uso.
+- **`inicio`:**
+  - En una carpeta vacía o a medio armar no se frena: avisa y sigue con el Arrancar del Capataz. Al terminar, ofrece seguir trabajando ahí mismo.
+  - No se activa con "saldo de inicio" ni "fecha de inicio".
+  - Recuerda que los datos del sistema se sacan en Code.
+- **`cierre`:**
+  - Propone las reglas del negocio y las palabras nuevas para el `CLAUDE.md`.
+  - Junta todo en un solo borrador, con **una sola pregunta**.
+  - No inventa pasos de receta.
+  - **No se activa con el "cierre de mes" o el "cierre de caja"**.
+- **`configurar`:** las instrucciones se pegan en un solo lugar (Configuración > General > Instrucciones para Claude).
+- **`reportes`:**
+  - Para el Excel conectado lee solo servidor, base y usuario: la clave no pasa por el chat.
+  - El control independiente va a un archivo `_control`.
+  - Explica los avisos de "ERROR EN LA CONSULTA" y de archivo que ya existe.
+- **Documentación:**
+  - `README.md` nuevo, con banner, "Empezar en 3 pasos" y el ciclo de trabajo.
+  - **Guía de uso** completa (`docs/GUIA.md`) y **machete** de una página (`docs/MACHETE.md`).
+- **Herramientas:**
+  - `revisar.py` controla cada paquete contra la tienda (`name`, `version`), que la Guía diga la versión del paquete, y detecta claves reales en archivos JSON.
+  - `empaquetar.py` arma `dist/kit-eq-<versión>.zip` para el plan B (Upload plugin).
+
+### Corregido
+- `csv_a_excel.py`: un CBU de 22 dígitos o un código como "12E3" se convertían en número y perdían dígitos. Ahora los números de más de 15 dígitos y los códigos con letras quedan como texto.
+
+### Probado
+- `claude plugin validate` pasa en la tienda y en los dos paquetes.
+- Instalación desde la carpeta local con la línea de comandos, en una configuración aislada: `kit-eq` trae capataz, cierre e inicio; `kit-eq-code` trae configurar y reportes.
+- Ensayo real en Code (modelo sonnet, alumna ficticia de tesorería):
+  - **Bienvenida completa:** método en 5 líneas, no repregunta el puesto, 5 preguntas de a una, el plano, no escribe sin OK y arma la carpeta con `RECETA.md`, sin huecos. Una regla que surgió en la charla quedó anotada sola.
+  - **"inicio" en una carpeta vacía:** arranca las preguntas sin escribir nada antes del plano.
+  - **"inicio" en una copia de la carpeta modelo de la Clase 0** (huecos `[...]` y un Excel en `originales/`): la completó, sumó `LEEME-PRIMERO.md`, `RECETA.md` y `resultados/`, y no tocó el Excel.
+  - **Guía:** responde por tareas y avisa que las de Code no están instaladas.
+  - **`cierre` después de trabajar:** propuso una regla y una palabra para el `CLAUDE.md`, no inventó pasos de receta y no escribió nada sin OK.
+- `csv_a_excel.py` con CBU, códigos con cero adelante y con E, negativos y fechas.
+
+### NO VERIFICADO
+- **Todo en Cowork Pro:**
+  - Add marketplace, Sync automatically y Upload plugin. Tampoco si Cowork espera a que suba la versión.
+  - Que capataz, inicio y cierre lean `trabajos/` y `carpeta-modelo/`, y que inicio llegue al Arrancar del Capataz.
+- **La pestaña Code de la app de escritorio:** los comandos `/plugin`.
+- **Los nombres de menú:** Configuración > General > Instrucciones para Claude.
+- **Las skills de documentos:** que vengan incluidas en Cowork.
+- **La carpeta modelo de la Clase 0:** se ensayó con una copia reconstruida, porque la original está en el taller y no se pudo leer desde la nube.
+- **Pendiente:**
+  - La conexión al SQL una sola vez, para todos los proyectos.
+  - El puente automático de `reportes` a `originales/`.
+  - Revisar los mensajes de `consultar.ps1`.
+
 ## 0.1.1 — 07/10/2026 (ronda de pruebas)
 
 ### Corregido

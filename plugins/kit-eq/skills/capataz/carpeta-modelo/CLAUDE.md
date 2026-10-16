@@ -1,12 +1,17 @@
 # {{TEMA}}
 
-> Instrucciones de esta carpeta para Claude. Las armó el Capataz el {{FECHA}}. Se pueden corregir cuando quieras.
+> Instrucciones de esta carpeta para Claude. Las armó el Capataz el {{FECHA}}. Se pueden corregir cuando quieras: decíselo a Claude y lo propone en el **cierre**.
 
 ## De qué se trata
 {{DE_QUE_SE_TRATA}}
 
-## ¿Se repite?
-{{SE_REPITE}}
+## Quién y para quién
+- **Lo hace:** {{QUIEN_LO_HACE}}
+- **Es para:** {{PARA_QUIEN}}
+- **Aprueba el resultado:** {{QUIEN_APRUEBA}}
+
+## Cada cuánto
+{{CADA_CUANTO}}
 
 ## Con qué trabajamos
 - Las **copias** de los archivos van en `originales/`. Los originales de verdad no se tocan.
@@ -17,7 +22,14 @@
 {{SALIDA_Y_FORMATO}}
 
 ## Reglas del negocio
+> Lo que un compañero nuevo no sabría. Crece con el uso: en cada **cierre** Claude propone las que aprendió.
+
 {{REGLAS_NEGOCIO}}
+
+## Palabras de acá
+> Siglas y nombres propios de este tema, con lo que significan.
+
+{{PALABRAS}}
 
 ## Cómo se trabaja acá
 - Un tema por conversación. Si cambia el tema o Claude se pone lento: **cierre** y conversación nueva.
@@ -27,4 +39,4 @@
 
 ## Al empezar y al terminar
 - **inicio**: leé `SESSION_HANDOFF.md` (y `RECETA.md` si existe) y contá en 3 líneas dónde quedamos.
-- **cierre**: actualizá `SESSION_HANDOFF.md` y sumá una línea arriba de todo en `CHANGELOG.md`.
+- **cierre**: actualizá `SESSION_HANDOFF.md`, sumá una línea arriba de todo en `CHANGELOG.md` y proponé las reglas y palabras nuevas que aprendiste.

@@ -17,6 +17,7 @@ import argparse
 import csv
 import datetime as dt
 import os
+import re
 import sys
 from decimal import Decimal, InvalidOperation
 
@@ -29,6 +30,10 @@ except ImportError:
     sys.exit(3)
 
 
+# Hasta 15 dígitos enteros: Excel no guarda más sin perder precisión.
+NUMERO = re.compile(r"-?\d{1,15}(\.\d+)?")
+
+
 def a_numero(texto):
     """Convierte '1234.5' (punto decimal, como lo deja consultar.ps1) a número.
     Devuelve None si no es número. Los códigos con cero adelante ('00123') quedan como texto."""
@@ -37,6 +42,8 @@ def a_numero(texto):
     t = texto.strip()
     if not t or "," in t:
         return None
+    if not NUMERO.fullmatch(t):
+        return None  # CBU, CUIT largos, códigos con letras o con E: quedan como texto
     sin_signo = t.lstrip("-")
     if len(sin_signo) > 1 and sin_signo.startswith("0") and not sin_signo.startswith("0."):
         return None
@@ -46,7 +53,7 @@ def a_numero(texto):
         return None
     if not d.is_finite():
         return None
-    return int(d) if "." not in t and "e" not in t.lower() else float(d)
+    return int(d) if "." not in t else float(d)
 
 
 def a_fecha(texto):
