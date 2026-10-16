@@ -89,6 +89,11 @@ archivos = [RAIZ / f for f in salida.stdout.splitlines() if f]
 prohibidos = {"conexion-eq.json"}
 # El catálogo de vistas (solo estructura, sin datos) viaja dentro del kit; en cualquier otro lugar no va.
 VISTAS_OK = "plugins/kit-eq-code/skills/reportes/vistas.md"
+VISTAS_DIR = "plugins/kit-eq-code/skills/reportes/vistas/"  # las fichas de cada vista
+
+
+def es_catalogo_de_vistas(rel):
+    return rel == VISTAS_OK or (rel.startswith(VISTAS_DIR) and rel.endswith(".md"))
 lista_privada = RAIZ.parent / ".kit-eq-prohibidas.txt"
 palabras = []
 if lista_privada.exists():
@@ -104,6 +109,9 @@ for f in archivos:
         continue
     if f.name.lower() == "vistas.md" and rel != VISTAS_OK:
         error(f"{rel}: el catálogo de vistas solo puede ir en {VISTAS_OK}")
+        continue
+    if rel.startswith(VISTAS_DIR) and not es_catalogo_de_vistas(rel):
+        error(f"{rel}: en la carpeta de fichas de vistas solo van archivos .md")
         continue
     if f.suffix.lower() in {".pyc", ".pyo"} or "__pycache__" in f.parts:
         error(f"{rel}: archivo compilado de Python, no va al repo (está en .gitignore)")
@@ -127,7 +135,7 @@ for f in archivos:
         error(f"{rel}: parece una clave en una cadena de conexión ({m.group(0)[:12]}...)")
     for m in clave_json.finditer(texto):
         error(f"{rel}: parece una clave real en un JSON ({m.group(1)})")
-    for w in ([] if rel == VISTAS_OK else palabras):  # el catálogo de vistas lleva nombres de vistas a propósito
+    for w in ([] if es_catalogo_de_vistas(rel) else palabras):  # el catálogo de vistas lleva nombres de vistas a propósito
         if w.lower() in texto.lower():
             error(f"{rel}: contiene una palabra de la lista privada")
 
