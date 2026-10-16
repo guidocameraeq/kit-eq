@@ -1,5 +1,17 @@
 # CHANGELOG — kit eQ
 
+## 0.2.2 de `kit-eq-code` — 16/10/2026 (actualizaciones en Code)
+
+### Cambiado
+- `configurar` suma un paso para prender la actualización automática de la tienda en Code (viene apagada para tiendas de terceros) e instalar `kit-eq-code`; avisa que `kit-eq` ya llega a Code desde la cuenta.
+- `principios.md`: el cierre hace una sola pregunta (también para la receta).
+- Guía y `COMO-TRABAJAMOS`: cómo les llegan las actualizaciones en Cowork, en Code y con el zip.
+- `kit-eq` sigue en 0.2.1.
+
+### NO VERIFICADO
+- Que los menús de **Marketplaces** y **Enable auto-update** sean iguales en la pestaña Code de la app de escritorio.
+- Cómo se comporta **Sync automatically** en Cowork Pro.
+
 ## 0.2.1 — 16/10/2026 (pulido para presentar)
 
 ### Probado

@@ -143,10 +143,14 @@ Así el trabajo sale igual todos los meses, lo haga quien lo haga.
 
 ## 9. Actualizaciones
 
-- **Con "Sync automatically" prendido**, las versiones nuevas llegan solas. Para buscarlas a mano: **Customize** > **Plugins** > la tienda **kit-eq** > **Check for updates**.
-- **En Code:** `/plugin marketplace update kit-eq` y después `/plugin update kit-eq-code@kit-eq`. Cerrá y abrí la sesión.
-- **Si lo instalaste con el zip:** pedí el zip nuevo, borrá el paquete viejo y subí el nuevo.
+**Cómo funciona:** cuando Guido mejora el kit, sube el número de versión. Quien tiene el kit instalado recibe el cambio **solo si cambió ese número**. Por eso no te llega nada a medio hacer.
+
+- **Cowork y el chat** (kit-eq): con **Sync automatically** prendido, las versiones nuevas llegan solas. Para buscarlas a mano: **Customize** > **Plugins** > la tienda **kit-eq** > **Check for updates**.
+- **Code:** lo que instalaste en **Customize** > **Plugins** también llega a Code solo, desde tu cuenta. Para `kit-eq-code` (configurar y reportes) hay que prender una vez la actualización automática: `/plugin` > pestaña **Marketplaces** > **kit-eq** > **Enable auto-update**. Para buscar a mano: `/plugin marketplace update kit-eq` y después **Update now** en `/plugin` > **Installed**. Cerrá y abrí la sesión para que la tome.
+- **Si lo instalaste con el zip:** no se actualiza solo. Pedí el zip nuevo, borrá el paquete viejo y subí el nuevo.
 - **Qué cambió en cada versión:** [CHANGELOG](../CHANGELOG.md).
+
+> En Cowork, cómo se comporta **Sync automatically** es NO VERIFICADO: se prueba con la primera actualización real.
 
 ## 10. Si algo no anda
 
