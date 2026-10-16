@@ -1,0 +1,38 @@
+# Trabajo del Capataz: Bienvenida (la primera vez)
+
+La persona está empezando. En esta conversación sale con **su primera carpeta armada** y sabiendo usar las tres palabras. Seguí las **reglas de oro** del `SKILL.md`. Andá corto: no des una clase, mostrá haciendo.
+
+## Paso 1: el método en 5 líneas
+
+Decilo así, con tus palabras:
+- *"Claude se olvida de una conversación a otra. La carpeta, no: es el cuaderno."*
+- *"Cada tema de trabajo tiene su carpeta. Adentro hay un `CLAUDE.md` que dice de qué se trata y sus reglas, y un `SESSION_HANDOFF.md` que dice dónde quedamos."*
+- *"Las palabras son tres: **capataz** para armar una carpeta, **inicio** para retomar, **cierre** para dejar anotado."*
+- *"Un tema por conversación. Los originales no se tocan: se trabaja con copias."*
+- *"Ahora armamos tu primera carpeta, con un tema real tuyo."*
+
+## Paso 2: la carpeta
+
+- **Si no hay una carpeta conectada** (Cowork) o la sesión no está en una carpeta de trabajo (Code): pedí que creen una carpeta para su primer tema, con un nombre corto sin tildes (por ejemplo `Conciliacion-proveedores`), y que abran la conversación ahí. Recomendá tener todas las carpetas de temas juntas dentro de una carpeta madre (por ejemplo `Documentos\Claude\`). Si ya usan la **carpeta modelo** que les pasaron, que copien esa y la conecten. Pará hasta que vuelvan con la carpeta.
+- **Si hay carpeta:** seguí.
+
+## Paso 3: armar la primera carpeta
+
+Hacé el trabajo **Arrancar** completo: leé `trabajos/arrancar.md` y seguilo. Si la carpeta es la carpeta modelo copiada, Arrancar la completa.
+
+## Paso 4: cómo se sigue
+
+Contá el ciclo con el próximo paso concreto:
+1. *"Abrí una **conversación nueva** en esta carpeta y decí **inicio**. Vas a ver que retomo sin que me expliques nada."*
+2. *"Trabajá el tema. Si algo no te cierra, decímelo en criollo."*
+3. *"Al terminar decí **cierre**: te muestro qué voy a anotar y lo anoto con tu OK."*
+
+## Paso 5: qué más hay (corto)
+
+Leé `trabajos/guia.md` y contá **solo** lo esencial en 3 o 4 líneas: qué skills tienen hoy y que, cuando quieran ver todo, digan *"¿qué puedo hacer con el kit?"*.
+
+**En Code**, si la PC no parece configurada (no hay `CLAUDE.md` global en la carpeta `.claude` del usuario), sugerí decir **configurar**, que es del paquete `kit-eq-code`. En Cowork no hace falta.
+
+## Al terminar
+
+Cerrá en dos líneas: qué quedó armado y el próximo paso (*"conversación nueva en esta carpeta y decís **inicio**"*). No sigas trabajando el tema acá.

@@ -1,6 +1,6 @@
 ---
 name: cierre
-description: Cierra la conversación dejando el cuaderno al día - reescribe SESSION_HANDOFF.md (qué hicimos, qué sigue, qué probamos y no funcionó, pendientes) y suma una línea a CHANGELOG.md; si se usó una receta y algo fue distinto, pregunta si la actualiza. Usar cuando dicen "cierre", "cerremos", "terminamos por hoy", "dejalo anotado". NO usar en una carpeta que no está armada (primero capataz).
+description: Cierra la conversación dejando el cuaderno al día - reescribe SESSION_HANDOFF.md (qué hicimos, qué sigue, qué probamos y no funcionó, pendientes), suma una línea a CHANGELOG.md, propone las reglas del negocio y palabras nuevas para el CLAUDE.md y, si se usó una receta y algo fue distinto, pregunta si la actualiza. Usar cuando dicen "cierre", "cerremos", "terminamos por hoy", "dejalo anotado". NO usar en una carpeta que no está armada (primero capataz).
 ---
 
 # Cierre: dejar el cuaderno al día
@@ -16,12 +16,12 @@ La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito
 - No borra ni mueve archivos.
 - No toca `originales/` ni los resultados.
 - **No cambia `RECETA.md` sin OK**: propone el cambio y espera.
-- No cambia `CLAUDE.md` sin OK (si aprendiste una regla nueva del negocio, proponela).
+- No cambia `CLAUDE.md` sin OK: propone las reglas y palabras nuevas (punto 5) y espera.
 
 ## Pasos
 
 1. **Repasar la conversación**: qué se hizo, qué se decidió, qué archivos salieron en `resultados/`, qué se probó y no anduvo, qué quedó pendiente.
-2. **Primero mostrás, después escribís.** En esta respuesta solo mostrás el borrador (las 4 secciones de abajo, cortas, más la línea del CHANGELOG y, si corresponde, los pasos propuestos para la receta del punto 5) y terminás con *"¿Lo anoto así?"*. **No escribas ningún archivo en la misma respuesta.** Recién con el sí, escribís. Si la persona corrige algo, lo que dice ella manda.
+2. **Primero mostrás, después escribís.** En esta respuesta solo mostrás el borrador (las 4 secciones de abajo, cortas, más la línea del CHANGELOG y, si corresponde, lo que proponés sumar al `CLAUDE.md` del punto 5 y los pasos para la receta del punto 6) y terminás con *"¿Lo anoto así?"*. **No escribas ningún archivo en la misma respuesta.** Recién con el sí, escribís. Si la persona corrige algo, lo que dice ella manda.
 3. **Reescribir entero `SESSION_HANDOFF.md`** con este formato. Antes, leé el que hay: si tiene algo que no salió de un cierre (una nota que agregó la persona a mano, un pendiente viejo que sigue vivo), pasalo a la versión nueva y mostralo en el borrador. Nunca lo pierdas en silencio.
    ```
    # Dónde quedamos
@@ -43,11 +43,12 @@ La conversación termina y Claude se va a olvidar de todo. Antes, dejás escrito
    - (lo que falta confirmar y con quién; o "nada")
    ```
 4. **Sumar una línea arriba de todo en `CHANGELOG.md`** (debajo del título y la nota): `- dd/mm/aaaa — qué hicimos y qué decidimos, en una línea.` Si ya hay una línea de hoy, completala en vez de agregar otra.
-5. **Receta:**
+5. **`CLAUDE.md` que mejora con el uso.** Si hoy apareció una **regla del negocio** (algo que un compañero nuevo no sabría: "los importes van sin IVA", "el cierre es el día 5") o una **palabra de acá** (una sigla o un nombre propio del tema: "CC = cuenta corriente"), proponé sumarla en el borrador, de a una línea, bajo "Reglas del negocio" o "Palabras de acá". Si esas secciones no existen, proponé crearlas al final. Si dice "(todavía nada...)", se reemplaza. Con OK, se agrega; nunca se borra lo que ya está. Si no apareció nada, no lo menciones.
+6. **Receta:**
    - Si hay `RECETA.md` y hoy algo fue distinto (un paso nuevo, un control que falló, una excepción): preguntá *"¿Actualizo la receta?"* y mostrá el cambio. Con OK: aplicalo, subí la versión y sumá una fila al **Registro de cambios** con la fecha y el porqué.
    - Si hay `RECETA.md` con los pasos todavía sin completar y hoy se hizo el proceso: proponé vos los pasos en el borrador, ya escritos como filas de la tabla (acción + control + exacto/criterio); no preguntes si querés proponerlos. Se aplican solo con OK.
    - Si no hay receta y el tema se repite: ofrecé armarla.
-6. **Avisar** en 2 líneas: qué quedó anotado y *"Para seguir: conversación nueva en esta carpeta y decís **inicio**."*
+7. **Avisar** en 2 líneas: qué quedó anotado y *"Para seguir: conversación nueva en esta carpeta y decís **inicio**."*
 
 ## Reglas
 

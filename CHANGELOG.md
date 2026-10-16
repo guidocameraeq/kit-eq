@@ -1,5 +1,33 @@
 # CHANGELOG — kit eQ
 
+## 0.2.0 — 16/10/2026 (etapa A, para la Clase 1)
+
+### Cambiado
+- **Dos paquetes en una tienda.** `plugins/kit-eq/` (capataz, inicio y cierre: Cowork y Code) y `plugins/kit-eq-code/` (configurar y reportes: solo Code). El `marketplace.json` lista los dos. Los archivos de mantenimiento (`docs/`, `herramientas/`, `CLAUDE.md`) ya no se instalan.
+- **`capataz`** pasa a ser corto: decide qué trabajo toca y lee solo ese archivo de `trabajos/`.
+  - **Bienvenida** (nuevo): la primera vez explica el método, arma la primera carpeta y enseña el ciclo inicio y cierre.
+  - **Arrancar**: no repregunta lo que ya está en las instrucciones de la persona. **Completa la carpeta modelo copiada** si el `CLAUDE.md` está sin llenar, en vez de rechazarla.
+  - **Guía** (nuevo): qué se puede hacer, por tareas y con la frase para pedirlo.
+- **Plantilla del `CLAUDE.md`** con secciones nuevas: "Quién y para quién", "Cada cuánto", "Reglas del negocio" y "Palabras de acá". Las dos últimas crecen con el uso.
+- **`cierre`** propone las reglas del negocio y las palabras nuevas para el `CLAUDE.md`, siempre con OK.
+- **`inicio`** detecta la carpeta modelo sin completar y ofrece completarla con el Capataz.
+- **`README.md`** es la guía del alumno: instalar, la primera vez, las tres palabras, actualizaciones y qué hacer si algo falla.
+- **`revisar.py`** controla cada entrada del marketplace contra su `plugin.json`, con `name` y `version`. **`empaquetar.py`** arma `dist/kit-eq.zip` para el plan B (Upload plugin).
+
+### Probado
+- `claude plugin validate` pasa en la tienda y en los dos paquetes.
+- Instalación desde la carpeta local con la línea de comandos, en una configuración aislada: `kit-eq` trae capataz, cierre e inicio; `kit-eq-code` trae configurar y reportes.
+- Ensayo real en Code (modelo sonnet, alumna ficticia de tesorería):
+  - **Bienvenida completa:** método en 5 líneas, no repregunta el puesto, 5 preguntas de a una, el plano, no escribe sin OK y arma la carpeta con `RECETA.md`, sin `{{` sin reemplazar. La regla del negocio que surgió en la charla quedó anotada sola.
+  - **Carpeta modelo con `[completar]`:** la reconoce y arranca las preguntas sin pisar nada.
+  - **Guía:** responde por tareas y avisa que las de Code no están instaladas.
+
+### NO VERIFICADO
+- Todo en Cowork Pro: Add marketplace, Sync automatically y Upload plugin. Tampoco si Cowork espera a que suba la versión.
+- Que `cierre` proponga reglas y palabras en un caso real: el texto está, pero no se ensayó.
+- Que la plantilla coincida con la carpeta modelo del curso: está en el taller y no se pudo comparar.
+- Pendiente de la etapa A: la conexión al SQL una sola vez, para todos los proyectos (`configurar` y `reportes` siguen como en 0.1.1).
+
 ## 0.1.1 — 07/10/2026 (ronda de pruebas)
 
 ### Corregido

@@ -21,6 +21,7 @@ La persona abrió una conversación nueva en la carpeta de un tema. Claude no se
 
 1. **Leer**, en este orden: `SESSION_HANDOFF.md`, `CLAUDE.md`, `RECETA.md` (si existe) y las 5 entradas más nuevas de `CHANGELOG.md` (las más nuevas están **arriba**, debajo del título). Mirá también qué hay en `resultados/` y en `originales/` (solo los nombres).
 2. **Si no hay `SESSION_HANDOFF.md` ni `CLAUDE.md`**: esta carpeta no está armada. Decí: *"Esta carpeta todavía no está armada. ¿La armamos con el Capataz?"* y pará.
+   **Si el `CLAUDE.md` está sin completar** (tiene `{{`, `[completar]`, `(completar)` o secciones vacías): es la carpeta modelo copiada. Decí: *"Esta carpeta todavía tiene el `CLAUDE.md` sin completar. ¿Lo completamos con el Capataz? Son unas pocas preguntas."* y pará.
 3. **Contar en 3 líneas**:
    - **Dónde quedamos:** lo último que se hizo y cuándo.
    - **Qué sigue:** el próximo paso que dejó anotado el cierre.

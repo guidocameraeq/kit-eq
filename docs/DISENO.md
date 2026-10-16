@@ -142,7 +142,7 @@ Una skill creada para una sola persona es **personal** y queda en su cuenta. Si 
 ## Hoja de ruta
 | Etapa | Qué | Para cuándo |
 |---|---|---|
-| A | Partir en dos paquetes (subcarpetas). Capataz con Bienvenida, Arrancar (con la plantilla nueva del `CLAUDE.md`) y Guía. `cierre` propone reglas y palabras para el `CLAUDE.md`. Conexión SQL general. `README.md` como guía del alumno | Clase 1 |
+| A | Partir en dos paquetes (subcarpetas). Capataz con Bienvenida, Arrancar (con la plantilla nueva del `CLAUDE.md`) y Guía. `cierre` propone reglas y palabras para el `CLAUDE.md`. `README.md` como guía del alumno. **Hecho en 0.2.0.** Falta: la conexión SQL general | Clase 1 (16/10) |
 | B | Capataz Revisar; `anotar`, `ordenar` y `verificar` | Clase 2 |
 | C | Capataz Nueva skill; `cruzar`, `extraer` y `redactar`, según lo que pidan los alumnos | Después |
 

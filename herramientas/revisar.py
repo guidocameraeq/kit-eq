@@ -1,8 +1,9 @@
 """revisar.py — control antes de cada commit/push del kit (el repo es PÚBLICO).
 
 Revisa:
-  1. Que cada skills/*/SKILL.md tenga frontmatter válido (name igual a la carpeta, description).
-  2. Que plugin.json y marketplace.json sean JSON válidos y nombren al plugin.
+  1. Que cada plugins/*/skills/*/SKILL.md tenga frontmatter válido (name igual a la carpeta, description).
+  2. Que marketplace.json y el plugin.json de cada paquete sean JSON válidos y coincidan
+     (cada entrada del marketplace apunta a una carpeta con su plugin.json y el mismo name).
   3. Que no haya datos privados: archivos prohibidos, IPs, cadenas de conexión con clave,
      y las palabras de una lista privada opcional (una por línea) en ../.kit-eq-prohibidas.txt
      (FUERA del repo, para poder listar nombres internos sin publicarlos).
@@ -29,7 +30,8 @@ def error(msg):
 
 
 # 1. Frontmatter de skills
-for skill in sorted((RAIZ / "skills").glob("*/SKILL.md")):
+SKILLS = sorted(RAIZ.glob("plugins/*/skills/*/SKILL.md"))
+for skill in SKILLS:
     texto = skill.read_text(encoding="utf-8")
     m = re.match(r"^---\n(.*?)\n---\n", texto, re.S)
     if not m:
@@ -52,14 +54,28 @@ for skill in sorted((RAIZ / "skills").glob("*/SKILL.md")):
         error(f"{skill.relative_to(RAIZ)}: description de {len(desc)} caracteres (máximo 1024)")
 
 # 2. Manifiestos
-for nombre in ("plugin.json", "marketplace.json"):
-    p = RAIZ / ".claude-plugin" / nombre
+try:
+    mercado = json.loads((RAIZ / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+except Exception as e:  # noqa: BLE001
+    error(f".claude-plugin/marketplace.json: JSON inválido ({e})")
+    mercado = {}
+if mercado and mercado.get("name") != "kit-eq":
+    error(".claude-plugin/marketplace.json: name debería ser 'kit-eq'")
+for entrada in mercado.get("plugins", []):
+    nombre = entrada.get("name")
+    carpeta = RAIZ / str(entrada.get("source", "")).removeprefix("./")
+    manifiesto = carpeta / ".claude-plugin" / "plugin.json"
     try:
-        data = json.loads(p.read_text(encoding="utf-8"))
-        if data.get("name") != "kit-eq":
-            error(f".claude-plugin/{nombre}: name debería ser 'kit-eq'")
+        data = json.loads(manifiesto.read_text(encoding="utf-8"))
     except Exception as e:  # noqa: BLE001
-        error(f".claude-plugin/{nombre}: JSON inválido ({e})")
+        error(f"marketplace.json: la entrada '{nombre}' no tiene un plugin.json válido en {entrada.get('source')} ({e})")
+        continue
+    if data.get("name") != nombre:
+        error(f"{manifiesto.relative_to(RAIZ)}: name='{data.get('name')}' no coincide con la entrada '{nombre}' del marketplace")
+    if not data.get("version"):
+        error(f"{manifiesto.relative_to(RAIZ)}: falta version (sin version los alumnos no reciben los cambios)")
+    if not list(carpeta.glob("skills/*/SKILL.md")):
+        error(f"{manifiesto.relative_to(RAIZ)}: el paquete no tiene skills")
 
 # 3. Datos privados (solo archivos que git va a publicar)
 salida = subprocess.run(
@@ -106,6 +122,6 @@ if errores:
     for e in errores:
         print(" -", e)
     sys.exit(1)
-print(f"OK: {len(list((RAIZ / 'skills').glob('*/SKILL.md')))} skills con frontmatter válido, manifiestos OK, sin datos privados a la vista.")
+print(f"OK: {len(SKILLS)} skills con frontmatter válido, manifiestos OK, sin datos privados a la vista.")
 if not palabras:
     print("Aviso: no encontré ../.kit-eq-prohibidas.txt (lista privada de nombres internos); solo revisé IPs y claves.")
