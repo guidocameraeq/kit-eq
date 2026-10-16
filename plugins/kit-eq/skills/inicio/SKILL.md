@@ -19,12 +19,12 @@ La persona abrió una conversación nueva en la carpeta de un tema. Claude no se
 
 ## Pasos
 
-1. **Leer**, en este orden: `SESSION_HANDOFF.md`, `CLAUDE.md`, `RECETA.md` (si existe) y las 5 entradas más nuevas de `CHANGELOG.md` (las más nuevas están **arriba**, debajo del título). Mirá también qué hay en `resultados/` y en `originales/` (solo los nombres).
+1. **Leer**, en este orden: `SESSION_HANDOFF.md`, `CLAUDE.md`, `RECETA.md` (si existe), `PLAN.md` (si existe; es el plan de encare) y las 5 entradas más nuevas de `CHANGELOG.md` (las más nuevas están **arriba**, debajo del título). Mirá también qué hay en `resultados/` y en `originales/` (solo los nombres).
 2. **Si no es la carpeta de un tema:**
    - **Es la carpeta madre** (tiene subcarpetas con su propio `CLAUDE.md`): no armes nada. Decí *"Esta es la carpeta de todos tus temas. Para retomar uno, abrí una conversación nueva con la carpeta de ese tema (veo: ...) y decí **inicio**. Si es un tema nuevo, decí **capataz**."* y pará.
    - **Es Documentos, el Escritorio o una carpeta con temas mezclados:** pedí que abran la conversación con la carpeta del tema y pará.
 
-   **Si la carpeta no está armada o está a medio armar** (falta `CLAUDE.md` o `SESSION_HANDOFF.md`, o el `CLAUDE.md` tiene huecos para completar como los define el Arrancar: `{{...}}`, `[completar]`, `[Tema de la carpeta]`; los links y las casillas `- [ ]` no cuentan): no hay nada que retomar todavía. **Empezá siempre con esta frase, tal cual:** *"Esta carpeta todavía no está armada: la armo con vos. Te hago unas pocas preguntas y, antes de escribir nada, te muestro qué voy a crear."* y **seguí directo usando la skill `capataz`, con su trabajo Arrancar**, sin preguntar si querés. Si la skill `capataz` no está instalada, decí que falta el kit (Customize > Plugins) y pará.
+   **Si la carpeta no está armada o está a medio armar** (falta `CLAUDE.md` o `SESSION_HANDOFF.md`, o el `CLAUDE.md` tiene huecos para completar como los define el Arrancar: `{{...}}`, `[completar]`, `[Tema de la carpeta]`; los links y las casillas `- [ ]` no cuentan): no hay nada que retomar todavía. **Empezá siempre con esta frase, tal cual:** *"Esta carpeta todavía no está armada: la armo con vos. Te hago unas pocas preguntas y, antes de escribir nada, te muestro qué voy a crear."* (si hay un `PLAN.md`, empezá igual con esta frase: el Capataz hará menos preguntas) y **seguí directo usando la skill `capataz`, con su trabajo Arrancar**, sin preguntar si querés. Si la skill `capataz` no está instalada, decí que falta el kit (Customize > Plugins) y pará.
 3. **Contar en 3 líneas**:
    - **Dónde quedamos:** lo último que se hizo y cuándo.
    - **Qué sigue:** el próximo paso que dejó anotado el cierre.

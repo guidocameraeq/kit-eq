@@ -14,6 +14,7 @@
 ### NO VERIFICADO
 - Que el Arquitecto se active solo con las frases del `description` en Cowork Pro.
 - Que pueda guardar `PLAN.md` en la carpeta conectada de Cowork.
+- El flujo completo arquitecto → `PLAN.md` → capataz: se revisó con dos agentes (uno técnico y otro que simuló tres alumnos), pero **no se ensayó en Cowork Pro**. Tampoco los casos de Chat sin carpeta, carpeta madre y carpeta ya armada.
 
 ## 0.2.4 de `kit-eq-code` — 16/10/2026 — la carpeta Reportes es siempre la misma
 
