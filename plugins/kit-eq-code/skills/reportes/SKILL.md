@@ -27,7 +27,7 @@ Si falta algo, no improvises: decí qué falta y sugerí correr `configurar` o p
 Los comandos de abajo usan rutas que empiezan con `.\` (por ejemplo `.\conexion-eq.json`): valen si la sesión de Code está abierta **en la carpeta Reportes**. Si está abierta en otra carpeta, usá la ruta completa de Reportes en todos los comandos (no copies `conexion-eq.json` a otro lado).
 
 Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta base de esta skill):
-- `scripts/consultar.ps1`: corre un solo SELECT y deja un CSV. Frena cualquier otra cosa y avisa en criollo si no hay red.
+- `scripts/consultar.ps1`: corre un solo SELECT y deja un CSV. Frena cualquier otra cosa y avisa en criollo si no hay red. **Solo deja pasar consultas sobre las vistas de la lista de `vistas.md`**, escritas como `dbo.NombreDeLaVista` y unidas con `JOIN` (no con coma): si aparece otra tabla o vista, frena con `FRENADO`.
 - `scripts/csv_a_excel.py`: pasa el CSV a Excel con encabezado, filtros, fila TOTAL con `=SUBTOTAL` y hoja **Control**.
 
 ## Pasos

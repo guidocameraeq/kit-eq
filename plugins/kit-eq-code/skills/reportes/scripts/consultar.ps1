@@ -19,6 +19,7 @@ param(
   [Parameter(Mandatory = $true)][string]$Consulta,
   [Parameter(Mandatory = $true)][string]$Salida,
   [int]$Espera = 8,
+  [string]$Catalogo = '',
   [switch]$SoloProbar
 )
 
@@ -60,6 +61,48 @@ foreach ($p in $prohibidas) {
 }
 if ($plano -match '(?i)\b(sp_|xp_)\w*') {
   Salir "FRENADO: la consulta llama a un procedimiento del sistema. Este kit solo hace SELECT de lectura." 2
+}
+
+# --- 1b. Solo las vistas validadas (el usuario del servidor lee mas que eso) ---
+# El usuario de solo lectura puede leer cualquier tabla o vista. Lo que lo limita a las
+# vistas del catalogo es esto: toda tabla o vista que aparezca despues de FROM o JOIN tiene
+# que estar en la lista de vistas.md (que viaja dentro del kit). Si falta el catalogo, frena.
+if (-not $Catalogo) { $Catalogo = Join-Path (Split-Path -Parent $PSScriptRoot) 'vistas.md' }
+if (-not (Test-Path -LiteralPath $Catalogo)) {
+  Salir "FALTA CATALOGO: no encuentro vistas.md en '$Catalogo'. Viene dentro del kit: actualizalo o avisale a Guido." 3
+}
+$permitidas = @{}
+$enTabla = $false
+foreach ($linea in (Get-Content -LiteralPath $Catalogo -Encoding UTF8)) {
+  if ($linea -match '^##\s+Las\s+\d+\s+vistas') { $enTabla = $true; continue }
+  if ($enTabla -and $linea -match '^##\s') { break }
+  if ($enTabla -and $linea -match '^\|\s*`([A-Za-z_][A-Za-z0-9_]*)`\s*\|') { $permitidas[$Matches[1].ToLower()] = $true }
+}
+if ($permitidas.Count -eq 0) {
+  Salir "FALTA CATALOGO: vistas.md no tiene la lista de vistas validadas. Avisale a Guido." 3
+}
+# Sin textos ni comentarios, pero con los nombres entre [corchetes] a la vista.
+$sinTextos = [regex]::Replace($q, '(?s)''(?:[^'']|'''')*''|--[^\r\n]*|/\*.*?\*/', ' ')
+if ($sinTextos -match '(?i)\bAPPLY\b') {
+  Salir "FRENADO: la consulta usa APPLY. Usa JOIN sobre las vistas del catalogo." 2
+}
+$ident = '(?:\[(?:[^\]]|\]\])+\]|"(?:[^"]|"")+"|[A-Za-z_#@][\w$#@]*)'
+$objeto = "$ident(?:\s*\.\s*$ident){0,3}"
+if ([regex]::IsMatch($sinTextos, "(?i)\b(?:FROM|JOIN)\s+$objeto(?:\s+(?:AS\s+)?[A-Za-z_]\w*)?\s*,")) {
+  Salir "FRENADO: hay dos tablas separadas por coma. Usa JOIN, asi se puede controlar que vistas se leen." 2
+}
+$ctes = @{}
+foreach ($m in [regex]::Matches($sinTextos, '(?i)(?:\bWITH|,)\s*([A-Za-z_]\w*)\s*(?:\([^)]*\))?\s*AS\s*\(')) {
+  $ctes[$m.Groups[1].Value.ToLower()] = $true
+}
+foreach ($m in [regex]::Matches($sinTextos, "(?i)\b(?:FROM|JOIN)\s+(?!\()($objeto)")) {
+  $partes = @([regex]::Matches($m.Groups[1].Value, $ident) | ForEach-Object { $_.Value.Trim('[', ']', '"') })
+  $nombre = $partes[$partes.Count - 1].ToLower()
+  $esperado = ($partes.Count -eq 1) -or ($partes.Count -eq 2 -and $partes[0].ToLower() -eq 'dbo')
+  $esCte = ($partes.Count -eq 1) -and $ctes.ContainsKey($nombre)
+  if (-not $esCte -and (-not $esperado -or -not $permitidas.ContainsKey($nombre))) {
+    Salir "FRENADO: '$($partes -join '.')' no esta entre las vistas validadas (vistas.md). Solo se consultan esas, con el nombre dbo.NombreDeLaVista. Si hace falta otra, avisale a Guido." 2
+  }
 }
 
 # --- 2. Conexión --------------------------------------------------------
