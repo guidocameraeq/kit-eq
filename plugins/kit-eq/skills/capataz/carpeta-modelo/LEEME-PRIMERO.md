@@ -8,11 +8,12 @@ Esta es una **carpeta de trabajo**. Claude se olvida de una conversación a otra
 | `CLAUDE.md` | De qué se trata esta carpeta y sus reglas |
 | `SESSION_HANDOFF.md` | Dónde quedamos y qué sigue (lo escribe Claude con "cierre") |
 | `CHANGELOG.md` | Una línea por día con lo hecho y lo decidido |
-{{FILA_RECETA}}| `originales/` | **Copias** de los archivos con los que trabajamos |
+| `RECETA.md` | Los pasos del proceso, para hacerlo siempre igual |
+| `originales/` | **Copias** de los archivos con los que trabajamos |
 | `resultados/` | Lo que arma Claude |
 
 ## Cómo se usa
-1. Abrís Cowork (o Code) en esta carpeta y decís **inicio**.
+1. Abrís una conversación nueva con esta carpeta (en Cowork o en Code) y decís **inicio**.
 2. Trabajás un solo tema.
 3. Al terminar decís **cierre**.
 

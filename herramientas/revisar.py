@@ -76,6 +76,9 @@ for entrada in mercado.get("plugins", []):
         error(f"{manifiesto.relative_to(RAIZ)}: falta version (sin version los alumnos no reciben los cambios)")
     if not list(carpeta.glob("skills/*/SKILL.md")):
         error(f"{manifiesto.relative_to(RAIZ)}: el paquete no tiene skills")
+    guia = carpeta / "skills" / "capataz" / "trabajos" / "guia.md"
+    if guia.exists() and data.get("version") and f"versión **{data['version']}**" not in guia.read_text(encoding="utf-8"):
+        error(f"{guia.relative_to(RAIZ)}: el catálogo no dice la versión {data['version']} del plugin.json")
 
 # 3. Datos privados (solo archivos que git va a publicar)
 salida = subprocess.run(
@@ -91,9 +94,10 @@ if lista_privada.exists():
 
 ip = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
 cadena = re.compile(r"(?i)(password|pwd)\s*=\s*[^;\s\"']+")
+clave_json = re.compile(r'(?i)"(clave|password|contrase(ñ|n)a)"\s*:\s*"(?!clave-de-ejemplo")[^"]+"')
 for f in archivos:
     rel = f.relative_to(RAIZ).as_posix()
-    if f.name in prohibidos:
+    if f.name in prohibidos or (f.name.lower().startswith("conexion") and f.suffix.lower() == ".json" and "ejemplo" not in f.name):
         error(f"{rel}: este archivo es privado y no puede ir al repo")
         continue
     if f.suffix.lower() in {".xlsx", ".csv", ".odc"}:
@@ -113,6 +117,8 @@ for f in archivos:
             error(f"{rel}: parece una IP ({m.group(0)})")
     for m in cadena.finditer(texto):
         error(f"{rel}: parece una clave en una cadena de conexión ({m.group(0)[:12]}...)")
+    for m in clave_json.finditer(texto):
+        error(f"{rel}: parece una clave real en un JSON ({m.group(1)})")
     for w in palabras:
         if w.lower() in texto.lower():
             error(f"{rel}: contiene una palabra de la lista privada")

@@ -1,6 +1,6 @@
 # CLAUDE.md — kit eQ
 
-Plugin de Claude Code / Cowork con el método de la carpeta para administrativos que no programan.
+Tienda de plugins para Claude (Cowork y Code) con el método de la carpeta, para administrativos que no programan: `kit-eq` (para todos) y `kit-eq-code` (solo Code).
 
 **Antes de tocar nada, leé `docs/DISENO.md`** (diseño v3, decisiones y hoja de ruta).
 

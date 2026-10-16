@@ -38,7 +38,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
    ```
    Si dice **SIN RED**, decí: *"No llego al servidor. ¿Estás en la oficina o con la VPN prendida?"* y pará. No reintentes en loop.
    Usá siempre `powershell` (Windows PowerShell 5.1, que trae SqlClient), no `pwsh`.
-   Otros avisos del script: **SIN PERMISO** (el servidor no aceptó el usuario: avisale a Guido, no pruebes otra clave), **FALTA CONEXION / CONEXION INCOMPLETA / CONEXION ROTA** (el archivo de conexión falta o está mal: decí cuál y que lo arregle Guido), **FRENADO** (la consulta no era un solo SELECT: corregila vos; nunca intentes esquivar el filtro).
+   Otros avisos del script: **SIN PERMISO** (el servidor no aceptó el usuario: avisale a Guido, no pruebes otra clave), **FALTA CONEXION / CONEXION INCOMPLETA / CONEXION ROTA** (el archivo de conexión falta o está mal: decí cuál y que lo arregle Guido), **FRENADO** (la consulta no era un solo SELECT: corregila vos y nunca intentes esquivar el filtro; o el archivo de salida ya existe: usá `_v02`), **ERROR EN LA CONSULTA** (la vista o una columna está mal escrita: revisá `vistas.md` y corregí).
 4. **Consultar.** Armá un único `SELECT` sobre la vista, con `TOP` si es una prueba. Nombre de salida: `resultados\AAAA-MM-DD_tema_v01.csv`. Corré `consultar.ps1` sin `-SoloProbar`.
 5. **Pasar a Excel:**
    ```
@@ -48,7 +48,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 6. **Verificar antes de entregar** (regla de oro):
    - Las filas que dice el script coinciden con las de la hoja Datos.
    - El total de la hoja Control coincide con la fila TOTAL (que calcula Excel).
-   - Hacé un control independiente: un `SELECT COUNT(*), SUM(<importe>)` con el mismo filtro, y compará.
+   - Hacé un control independiente: un `SELECT COUNT(*), SUM(<importe>)` con el mismo filtro, con salida `resultados\AAAA-MM-DD_tema_control.csv`, y compará.
    - Mostrá 1 caso puntual (una fila) para que el usuario lo mire contra el sistema.
 7. **Entregar** en criollo: dónde quedó el archivo, cuántas filas, el total, qué controlaste y qué conviene que mire con sus ojos. No muestres el SQL salvo que lo pida.
 
@@ -57,7 +57,7 @@ Los scripts están en la carpeta `scripts/` al lado de este archivo (la carpeta 
 Para algo que se mira seguido, conviene un Excel que se actualiza solo desde la vista. **NO VERIFICADO en las PCs de los alumnos:** que Excel se conecte con el usuario de solo lectura. Guiá al usuario clic por clic, sin pedirle que escriba SQL:
 
 1. Excel en blanco > pestaña **Datos** > **Obtener datos** > **Desde una base de datos** > **Desde base de datos de SQL Server**.
-2. **Servidor** y **Base de datos**: los que figuran en `conexion-eq.json` (dictáselos sin mostrar la clave). Cuando Excel pida usuario y clave, elegí la opción **Base de datos** (no Windows): el usuario se lo dictás; la clave la escribe la persona, que la tiene del material de Guido (si no la tiene, que se la pida a él; vos no la mostrás).
+2. **Servidor** y **Base de datos**: los que figuran en `conexion-eq.json`. Leé **solo esos campos y el usuario**, nunca el archivo entero: `powershell -NoProfile -Command "Get-Content .\conexion-eq.json -Raw | ConvertFrom-Json | Select-Object servidor,base,usuario,autenticacion"`. Servidor, base y usuario se pueden dictar; **la clave nunca**. Si `autenticacion` es `sql`, cuando Excel pida usuario y clave elegí la opción **Base de datos**: el usuario se lo dictás y la clave la escribe la persona, que la tiene del material de Guido. Si es `windows`, elegí **Windows** con su usuario de siempre.
 3. En el navegador de Excel, elegir la vista de `vistas.md` y tocar **Cargar**.
 4. Guardar en `Reportes\plantillas\` con nombre `vista_<tema>.xlsx`.
 5. Para usarlo: abrir, **Datos > Actualizar todo**, y recién ahí pasarlo a Cowork para analizar (tablas dinámicas, cruces). Cowork trabaja sobre **una copia** en la carpeta del tema, no sobre la plantilla.

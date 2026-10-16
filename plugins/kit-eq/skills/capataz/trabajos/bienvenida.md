@@ -13,26 +13,28 @@ Decilo así, con tus palabras:
 
 ## Paso 2: la carpeta
 
-- **Si no hay una carpeta conectada** (Cowork) o la sesión no está en una carpeta de trabajo (Code): pedí que creen una **carpeta vacía** para su primer tema, con un nombre corto sin tildes (por ejemplo `Conciliacion-proveedores`), dentro de una carpeta madre para todos sus temas (por ejemplo `Documentos\Claude\`), y que abran la conversación con esa carpeta. **No hace falta copiar nada:** la carpeta modelo la armás vos. Pará hasta que vuelvan con la carpeta.
+- **Si no hay una carpeta conectada** (Cowork) o la sesión no está en una carpeta de trabajo (Code): pedí que creen una **carpeta vacía** para su primer tema, con un nombre corto sin tildes (por ejemplo `Conciliacion-proveedores`), dentro de una carpeta madre para todos sus temas (por ejemplo `Documentos\Claude\`). **No hace falta copiar nada:** la carpeta modelo la armás vos. Cerrá con: *"Cuando la tengas, abrí una conversación nueva con esa carpeta y decí **inicio**: arranco desde ahí."* y pará.
 - **Si hay carpeta:** seguí.
 
 ## Paso 3: armar la primera carpeta
 
-Hacé el trabajo **Arrancar** completo: leé `trabajos/arrancar.md` y seguilo. Arrancar se fija qué hay: si la carpeta está vacía arma la carpeta modelo, y si ya tiene una copia de la carpeta modelo del curso, la completa.
+Hacé el trabajo **Arrancar**: leé `trabajos/arrancar.md` y seguilo **hasta su Paso 4** (su Paso 5 lo reemplaza el Paso 4 de acá). Arrancar se fija qué hay: si la carpeta está vacía la arma según la carpeta modelo, y si ya tiene una copia de la carpeta modelo del curso, la completa.
 
 ## Paso 4: cómo se sigue
 
-Contá el ciclo con el próximo paso concreto:
-1. *"Abrí una **conversación nueva** en esta carpeta y decí **inicio**. Vas a ver que retomo sin que me expliques nada."*
-2. *"Trabajá el tema. Si algo no te cierra, decímelo en criollo."*
-3. *"Al terminar decí **cierre**: te muestro qué voy a anotar y lo anoto con tu OK."*
+Contá qué quedó armado (lista corta) y el ciclo, con el próximo paso concreto:
+1. *"Si tenés archivos para este tema, pegalos en `originales/` (son copias: los originales quedan donde estaban)."*
+2. *"Abrí una **conversación nueva** en esta carpeta y decí **inicio**. Vas a ver que retomo sin que me expliques nada."*
+3. *"Trabajá el tema. Si algo no te cierra, decímelo en criollo."*
+4. *"Al terminar decí **cierre**: te muestro qué voy a anotar y lo anoto con tu OK."*
 
 ## Paso 5: qué más hay (corto)
 
-Leé `trabajos/guia.md` y contá **solo** lo esencial en 3 o 4 líneas: qué skills tienen hoy y que, cuando quieran ver todo, digan *"¿qué puedo hacer con el kit?"*.
+Decí, en tres líneas:
+- *"Para un tema nuevo: **capataz**. Para retomar: **inicio**. Para dejar anotado: **cierre**."*
+- *"Excel, Word, PowerPoint y PDF: pedímelos directamente."*
+- *"Para ver todo lo que hay, decí **¿qué puedo hacer con el kit?**"*
 
-**En Code**, si la PC no parece configurada (no hay `CLAUDE.md` global en la carpeta `.claude` del usuario), sugerí decir **configurar**, que es del paquete `kit-eq-code`. En Cowork no hace falta.
+**En Code**, si en tus instrucciones no aparecen los principios del kit (el bloque "Mi puesto"), sugerí decir **configurar**, que es del paquete `kit-eq-code`. En Cowork no hace falta.
 
-## Al terminar
-
-Cerrá en dos líneas: qué quedó armado y el próximo paso (*"conversación nueva en esta carpeta y decís **inicio**"*). No sigas trabajando el tema acá.
+No sigas trabajando el tema acá: la próxima conversación arranca con **inicio**.
