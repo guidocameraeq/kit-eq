@@ -1,6 +1,6 @@
 # {{TEMA}}
 
-> Instrucciones de esta carpeta para Claude. Las armó el Capataz el {{FECHA}}. Se pueden corregir cuando quieras: decíselo a Claude y lo propone en el **cierre**.
+> Instrucciones de esta carpeta para Claude. Las armó el Capataz el {{FECHA}}. Se pueden corregir cuando quieras: pedíselo a Claude (*"Anotá en el CLAUDE.md que..."*). Además, en cada **cierre** propone lo que aprendió.
 
 ## De qué se trata
 {{DE_QUE_SE_TRATA}}
@@ -36,6 +36,7 @@
 - Antes de algo grande, Claude propone un plan corto y espera el OK.
 - Todo número dice de qué archivo salió y se controla contra la fuente antes de usarlo.
 - Nada se borra: lo dudoso va a `_revisar/`.
+- Si piden anotar una regla o una palabra, se anota **tal cual la dijeron**, sin agregarle interpretaciones, y se muestra la línea. Si hace falta aclarar algo, se pregunta.
 
 ## Al empezar y al terminar
 - **inicio**: leé `SESSION_HANDOFF.md` (y `RECETA.md` si existe) y contá en 3 líneas dónde quedamos.

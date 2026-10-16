@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img alt="versión 0.2.0" src="https://img.shields.io/badge/versi%C3%B3n-0.2.0-E9A23B">
-  <img alt="anda en Cowork y en Code" src="https://img.shields.io/badge/anda%20en-Cowork%20%C2%B7%20Code-26355C">
+  <img alt="versión 0.2.1" src="https://img.shields.io/badge/versi%C3%B3n-0.2.1-E9A23B">
+  <img alt="pensado para Cowork y Code" src="https://img.shields.io/badge/pensado%20para-Cowork%20%C2%B7%20Code-26355C">
   <img alt="licencia MIT" src="https://img.shields.io/badge/licencia-MIT-6B7A99">
 </p>
 
@@ -42,8 +42,10 @@ El **kit eQ** es un paquete de habilidades (*skills*) para Claude que se instala
 
 ## Empezar en 3 pasos
 
+> Necesitás **Claude Pro** y la **app de Claude para escritorio**. El detalle está en [Antes de empezar](docs/GUIA.md#1-antes-de-empezar).
+
 1. **Instalá el kit en Cowork.** Abrí **Customize** > **Plugins** > **Add** > **Add marketplace**, escribí `guidocameraeq/kit-eq` e instalá **kit-eq**. Prendé **Sync automatically** para recibir las mejoras solas.
-2. **Creá una carpeta vacía** para tu primer tema, por ejemplo `Documentos\Claude\Conciliacion-bancaria`, y abrí una conversación de Cowork con esa carpeta.
+2. **Creá una carpeta vacía** para tu primer tema, por ejemplo `Documentos\Claude\Conciliacion-bancaria`. Abrí una conversación nueva y, en el cuadro donde se escribe, tocá el **+** y elegí esa carpeta.
 3. **Escribí: "Capataz, es mi primera vez".** Te hace unas pocas preguntas, arma la carpeta y te explica cómo seguir.
 
 Los pasos con más detalle, el plan B si no te deja instalar y la instalación en Code están en la **[guía de uso](docs/GUIA.md#2-instalar-el-kit)**.
@@ -52,7 +54,7 @@ Los pasos con más detalle, el plan B si no te deja instalar y la instalación e
 
 ```mermaid
 flowchart LR
-    A["capataz<br/>arma la carpeta"] --> B["inicio<br/>retoma donde quedaste"]
+    A["capataz<br/>arma la carpeta"] -->|conversación nueva| B["inicio<br/>retoma donde quedaste"]
     B --> C["trabajás el tema<br/>con Claude"]
     C --> D["cierre<br/>deja todo anotado"]
     D -->|conversación nueva| B
@@ -118,11 +120,11 @@ El Capataz conoce esta **carpeta modelo**. Si la carpeta está vacía la arma, y
 | Tener las frases a mano | **[Machete](docs/MACHETE.md)** (una página, para imprimir) |
 | Ver qué cambió en cada versión | **[CHANGELOG](CHANGELOG.md)** |
 | Entender el diseño | [Diseño](docs/DISENO.md) |
-| Mantener el kit | [Cómo trabajamos](docs/COMO-TRABAJAMOS.md) · `py herramientas/revisar.py` antes de cada commit · `py herramientas/empaquetar.py` arma el zip del plan B |
+| Mantener el kit | [Cómo trabajamos](docs/COMO-TRABAJAMOS.md) |
 
 ## Estado
 
-**Versión 0.2.0.**
+**Versión 0.2.1.**
 - **Probado en Code:** se validó con la herramienta oficial de plugins y se ensayó con una alumna ficticia (bienvenida, carpeta nueva, carpeta a medio armar, guía y cierre).
 - **NO VERIFICADO en Cowork Pro:** la instalación desde la tienda y el uso del kit. Se confirma en el primer uso.
 

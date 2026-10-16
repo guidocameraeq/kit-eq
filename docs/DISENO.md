@@ -41,7 +41,7 @@ kit-eq/                              ← el repo = la tienda
 
 `kit-eq-code` se ve en la tienda de Cowork igual (no se puede ocultar): su descripción dice "solo Code, no lo instales acá".
 
-**Plan B si Pro no deja agregar el marketplace:** se arma `kit-eq.zip` y cada uno lo sube en Customize > Plugins > Add > Upload plugin. Anda igual, pero no se actualiza solo: cada cambio es un zip nuevo.
+**Plan B si Pro no deja agregar el marketplace:** se arma `kit-eq-<versión>.zip` (también va adjunto en cada versión publicada en GitHub) y cada uno lo sube en Customize > Plugins > Add > Upload plugin. Anda igual, pero no se actualiza solo: cada cambio es un zip nuevo.
 
 **Dos capas:**
 - **Cuenta (el kit):** los procedimientos generales. Los mantiene el dev y llegan por sincronización.

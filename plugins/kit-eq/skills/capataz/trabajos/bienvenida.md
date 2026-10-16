@@ -18,7 +18,7 @@ Decilo así, con tus palabras:
 
 ## Paso 3: armar la primera carpeta
 
-Hacé el trabajo **Arrancar**: leé `trabajos/arrancar.md` y seguilo **hasta su Paso 4** (su Paso 5 lo reemplaza el Paso 4 de acá). Arrancar se fija qué hay: si la carpeta está vacía la arma según la carpeta modelo, y si ya tiene una copia de la carpeta modelo del curso, la completa.
+Hacé el trabajo **Arrancar**: leé `trabajos/arrancar.md` y seguilo **hasta su Paso 4** (su Paso 5 lo reemplaza el Paso 4 de acá). **Si Arrancar paró** (la carpeta ya estaba armada, o es Documentos o el Escritorio), no hagas el Paso 4: decí solo el Paso 5 y pará. Arrancar se fija qué hay: si la carpeta está vacía la arma según la carpeta modelo, y si ya tiene una copia de la carpeta modelo del curso, la completa.
 
 ## Paso 4: cómo se sigue
 
@@ -35,6 +35,6 @@ Decí, en tres líneas:
 - *"Excel, Word, PowerPoint y PDF: pedímelos directamente."*
 - *"Para ver todo lo que hay, decí **¿qué puedo hacer con el kit?**"*
 
-**En Code**, si en tus instrucciones no aparecen los principios del kit (el bloque "Mi puesto"), sugerí decir **configurar**, que es del paquete `kit-eq-code`. En Cowork no hace falta.
+**En Code**, si en tus instrucciones no aparecen los principios del kit (el bloque "Mi puesto"), sugerí instalar el paquete `kit-eq-code` (está en la guía de uso) y decir **configurar**. En Cowork no hace falta.
 
 No sigas trabajando el tema acá: la próxima conversación arranca con **inicio**.

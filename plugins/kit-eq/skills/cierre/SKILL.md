@@ -1,6 +1,6 @@
 ---
 name: cierre
-description: Cierra la conversación dejando el cuaderno al día - reescribe SESSION_HANDOFF.md (qué hicimos, qué sigue, qué probamos y no funcionó, pendientes), suma una línea a CHANGELOG.md, propone las reglas del negocio y palabras nuevas para el CLAUDE.md y, si se usó una receta y algo fue distinto, pregunta si la actualiza. Usar cuando dicen "cierre", "cerremos por hoy", "terminamos por hoy", "dejalo anotado" para terminar la conversación. NO usar cuando "cierre" es parte del trabajo (cierre de mes, de caja, contable o de un período: eso es el tema, no terminar la conversación) ni en una carpeta que no está armada (primero capataz).
+description: Cierra la conversación dejando el cuaderno al día - reescribe SESSION_HANDOFF.md (qué hicimos, qué sigue, qué probamos y no funcionó, pendientes), suma una línea a CHANGELOG.md, propone las reglas del negocio y palabras nuevas para el CLAUDE.md y, si se usó una receta y algo fue distinto, pregunta si la actualiza. Usar cuando dicen "cierre", "cerremos por hoy", "terminamos por hoy", "dejalo anotado" para terminar la conversación. NO usar cuando "cierre" es parte del trabajo (cierre de mes, de caja, contable o de un período: eso es el tema, no terminar la conversación), cuando piden anotar una regla suelta ("anotá en el CLAUDE.md que...": eso se hace directo, tal cual lo dijo la persona, y se muestra la línea) ni en una carpeta que no está armada (primero capataz).
 ---
 
 # Cierre: dejar el cuaderno al día

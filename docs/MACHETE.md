@@ -47,4 +47,4 @@
 | `originales/` | Copias de tus archivos |
 | `resultados/` | Lo que arma Claude |
 
-¿Algo no anda? Mirá la sección "Si algo no anda" de la **guía de uso**, o avisá con una captura de pantalla.
+¿Algo no anda? Mirá [Si algo no anda](GUIA.md#10-si-algo-no-anda) en la guía de uso, o avisale a quien da el curso con una captura de pantalla.

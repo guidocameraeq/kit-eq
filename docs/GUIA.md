@@ -21,10 +21,10 @@ Para quien trabaja en la oficina y **no programa**. Si es tu primera vez, leé l
 
 Necesitás:
 - **Una cuenta de Claude Pro** y la **app de Claude para escritorio** con la sesión iniciada.
-- **Tus instrucciones pegadas en Claude.** Son el texto con los principios y tu puesto que se pegó en la Clase 0, en **Configuración** (Settings) > **General** > **Instrucciones para Claude**. Con eso Claude ya sabe quién sos y no te lo vuelve a preguntar.
+- **Tus instrucciones pegadas en Claude.** Son el texto con los principios y tu puesto que se pegó en la Clase 0, en **Settings** (Configuración) > **General** > **Instructions for Claude** (Instrucciones para Claude). Con eso Claude ya sabe quién sos y no te lo vuelve a preguntar. Si no lo tenés, pedíselo a quien da el curso.
 - **Una carpeta madre para tus temas**, por ejemplo `Documentos\Claude\`. Adentro va una carpeta por tema.
 
-> Los nombres de los menús pueden cambiar, porque la app se actualiza seguido. Si no encontrás algo, avisá con una captura de pantalla.
+> Los menús figuran como aparecen hoy en la app, en inglés, con la traducción entre paréntesis. Pueden cambiar, porque la app se actualiza seguido. Si no encontrás algo, avisá con una captura de pantalla.
 
 ## 2. Instalar el kit
 
@@ -42,7 +42,7 @@ Se hace **una sola vez**. Lo que instalás queda en tu cuenta y anda en el chat,
 > **Si en la Clase 0 subiste skills sueltas** (capataz, inicio o cierre) en **Customize** > **Skills**, borralas antes de instalar el kit, para que no haya dos de cada una.
 
 ### Si no te deja agregar la tienda (plan B)
-1. Pedile el archivo `kit-eq-<versión>.zip` a quien da el curso.
+1. Descargá el zip del kit (por ejemplo `kit-eq-0.2.1.zip`) de [la última versión](https://github.com/guidocameraeq/kit-eq/releases/latest), o pedíselo a quien da el curso.
 2. Subilo en **Customize** > **Plugins** > **Add** > **Upload plugin**.
 
 Anda igual, pero **no se actualiza solo**: para cada versión nueva, borrá el paquete viejo en **Customize** > **Plugins** y subí el zip nuevo.
@@ -61,7 +61,7 @@ Lo que instalás desde Code queda **solo en esa PC**.
 ## 3. La primera vez
 
 1. Creá una **carpeta vacía** para tu primer tema dentro de tu carpeta madre. Por ejemplo, `Documentos\Claude\Conciliacion-bancaria`, con un nombre corto y sin tildes.
-2. Abrí una conversación de **Cowork** y elegí esa carpeta.
+2. Abrí una conversación nueva. Abajo, en el cuadro donde se escribe, tocá el **+** y elegí esa carpeta.
 3. Escribí: **"Capataz, es mi primera vez"**.
 
 El Capataz:
@@ -80,7 +80,7 @@ El Capataz:
 |---|---|---|
 | 1 | Abrís una **conversación nueva** con la carpeta del tema y decís **inicio** | Lee la carpeta y te cuenta en 3 líneas: dónde quedaron, qué sigue y con qué tener cuidado |
 | 2 | Trabajás el tema en criollo: *"Armame el resumen por proveedor de septiembre"* | Te propone un plan corto, espera tu OK, trabaja sobre las copias de `originales/` y deja lo que arma en `resultados/` |
-| 3 | Revisás: *"Mostrame 3 números y de dónde salen"* | Te los muestra contra el archivo original |
+| 3 | Revisás: *"Mostrame 3 números y de qué archivo salen"* | Te los muestra contra el archivo original |
 | 4 | Decís **cierre** | Te muestra un borrador de lo que va a anotar y, con tu OK, deja la carpeta al día |
 
 Para la próxima: conversación nueva y **inicio**. No hace falta explicar nada de nuevo.
@@ -92,13 +92,13 @@ Claude trabaja mejor con conversaciones **cortas y de un solo tema**. Cuando una
 - **Un tema, una conversación.** Si aparece otro tema: **cierre** y conversación nueva en la carpeta de ese tema.
 - **Cerrá seguido.** Al terminar una parte importante, o si notás que Claude está lento: **cierre**, conversación nueva e **inicio**. Lo importante ya quedó en la carpeta.
 - **La memoria está en la carpeta, no en la conversación.** El `CLAUDE.md` guarda las reglas del tema, el `SESSION_HANDOFF.md` dónde quedaron y el `CHANGELOG.md` la historia.
-- **El `CLAUDE.md` mejora con el uso.** Si en la charla aparece una regla ("las notas de crédito restan") o una sigla ("ND = nota de débito"), el **cierre** propone anotarla. También podés pedirlo directo: *"Anotá en el CLAUDE.md que las comisiones no son diferencias"*.
+- **El `CLAUDE.md` mejora con el uso.** Si en la charla aparece una regla ("las notas de crédito restan") o una sigla ("ND = nota de débito"), el **cierre** propone anotarla. También podés pedirlo directo: *"Anotá en el CLAUDE.md que las comisiones no son diferencias"*. Claude lo anota tal cual y te muestra la línea.
 - **Pedí el plan antes.** Para algo grande, Claude cuenta qué va a hacer y espera tu OK.
 - **Verificá siempre 3 números** contra el original antes de usar un resultado.
 
 ## 6. Qué hace cada skill
 
-Una *skill* es una habilidad que se le suma a Claude. No hace falta nombrarlas: con decir lo que necesitás, Claude elige la que corresponde.
+Una *skill* es una habilidad que se le suma a Claude. Las tres palabras (**capataz**, **inicio** y **cierre**) conviene decirlas tal cual; para lo demás alcanza con decir lo que necesitás, y Claude elige la skill que corresponde.
 
 ### capataz: el jefe de obra
 Prepara todo para que se trabaje bien, pero no hace el trabajo del tema.
@@ -117,7 +117,7 @@ Prepara todo para que se trabaje bien, pero no hace el trabajo del tema.
 - Te muestra un borrador: qué hicieron, qué sigue, qué no funcionó y qué quedó pendiente.
 - Propone las reglas y palabras nuevas para el `CLAUDE.md` y los cambios de la receta.
 - Escribe recién cuando decís que sí. Podés aceptar una parte: *"sí, menos la receta"*.
-- Ojo: si hablás del **cierre de mes** o del **cierre de caja**, Claude entiende que es parte del trabajo y no termina la conversación.
+- Ojo: si hablás del **cierre de mes** o del **cierre de caja**, Claude entiende que es parte del trabajo y no termina la conversación. Si hay duda, te pregunta si querés cerrar.
 
 ### configurar (solo Code)
 Deja la PC lista una sola vez: Python, las librerías para Excel, Word y PDF, tus instrucciones y la carpeta de reportes.
@@ -137,8 +137,8 @@ Así el trabajo sale igual todos los meses, lo haga quien lo haga.
 ## 8. Datos del sistema
 
 **Cowork no llega a la base de datos de la oficina**, porque corre en la nube. Los datos se sacan en Code y se trabajan en Cowork:
-1. En la pestaña **Code**, pedí el reporte: *"Sacame las compras de septiembre en Excel"*.
-2. Copiá el Excel que sale a `originales/` de la carpeta del tema.
+1. Abrí la pestaña **Code** en la carpeta `Documentos\Reportes` y pedí el reporte: *"Sacame las compras de septiembre en Excel"*.
+2. El Excel queda en `Documentos\Reportes\resultados\`. **Copialo** (no lo muevas) a `originales/` de la carpeta del tema.
 3. En **Cowork**, con **inicio**, seguís trabajando con ese Excel.
 
 ## 9. Actualizaciones
@@ -158,6 +158,8 @@ Así el trabajo sale igual todos los meses, lo haga quien lo haga.
 | Claude está lento o se olvida de cosas | **cierre**, conversación nueva e **inicio** |
 | Te pregunta cosas que ya sabe | Revisá que tus instrucciones estén pegadas (sección 1) |
 | Hay dos Capataz o dos inicio | Borrá las skills sueltas viejas en **Customize** > **Skills** |
+| Me olvidé de decir **cierre** | Volvé a esa conversación y decí **cierre**. Si no la encontrás, en una nueva decí **inicio** y contale en una línea lo que hiciste |
+| Claude me pide permiso para algo | Si es leer o escribir en la carpeta del tema, aceptá. Si es otra cosa o no entendés, decí que no y preguntale |
 | Otra cosa | Avisale a quien da el curso, con una captura de pantalla |
 
 ## 11. Palabras que vas a escuchar
