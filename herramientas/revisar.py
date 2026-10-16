@@ -52,6 +52,8 @@ for skill in SKILLS:
         error(f"{skill.relative_to(RAIZ)}: falta description")
     elif len(desc) > 1024:
         error(f"{skill.relative_to(RAIZ)}: description de {len(desc)} caracteres (máximo 1024)")
+    elif ": " in desc and not desc.startswith(("'", '"')):
+        error(f"{skill.relative_to(RAIZ)}: la description tiene ': ' (dos puntos y espacio) y un YAML estricto no la lee; usá ' - ' o una coma")
 
 # 2. Manifiestos
 try:

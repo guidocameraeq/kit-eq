@@ -2,7 +2,7 @@
 
 > **Claude se olvida de una conversación a otra. La carpeta, no.**
 
-## Las tres palabras
+## Las palabras
 
 | Decí | Cuándo |
 |---|---|

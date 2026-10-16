@@ -42,7 +42,7 @@ Se hace **una sola vez**. Lo que instalás queda en tu cuenta y anda en el chat,
 > **Si en la Clase 0 subiste skills sueltas** (capataz, inicio o cierre) en **Customize** > **Skills**, borralas antes de instalar el kit, para que no haya dos de cada una.
 
 ### Si no te deja agregar la tienda (plan B)
-1. Pedile el zip del kit (por ejemplo `kit-eq-0.2.1.zip`) a quien da el curso. Si está publicado, también lo podés bajar de [Releases](https://github.com/guidocameraeq/kit-eq/releases).
+1. Pedile el zip del kit (por ejemplo `kit-eq-0.3.0.zip`) a quien da el curso. Si está publicado, también lo podés bajar de [Releases](https://github.com/guidocameraeq/kit-eq/releases).
 2. Subilo en **Customize** > **Plugins** > **Add** > **Upload plugin**.
 
 Anda igual, pero **no se actualiza solo**: para cada versión nueva, borrá el paquete viejo en **Customize** > **Plugins** y subí el zip nuevo.
@@ -98,7 +98,14 @@ Claude trabaja mejor con conversaciones **cortas y de un solo tema**. Cuando una
 
 ## 6. Qué hace cada skill
 
-Una *skill* es una habilidad que se le suma a Claude. Las tres palabras (**capataz**, **inicio** y **cierre**) conviene decirlas tal cual; para lo demás alcanza con decir lo que necesitás, y Claude elige la skill que corresponde.
+Una *skill* es una habilidad que se le suma a Claude. Las palabras clave (**capataz**, **inicio**, **cierre** y, si no sabés cómo encarar algo, **arquitecto**) conviene decirlas tal cual; para lo demás alcanza con decir lo que necesitás, y Claude elige la skill que corresponde.
+
+### arquitecto: pensar cómo encarar algo
+*"Arquitecto, quiero hacer un informe y no sé cómo"*. Sirve cuando tenés algo para resolver y no sabés qué formato conviene, qué datos usar o en qué pestaña hacerlo.
+- Te hace hasta 5 preguntas, de a una, con opciones y una recomendada.
+- Te muestra un **plan de una página**: qué se quiere lograr, con qué datos, en qué formato, en qué pestaña y cómo controlarlo.
+- Con tu OK lo guarda como `PLAN.md` en la carpeta del tema. Después decís **capataz** y arma la carpeta con ese plan, sin volver a preguntarte lo mismo.
+- No hace el trabajo: te ayuda a decidir el camino.
 
 ### capataz: el jefe de obra
 Prepara todo para que se trabaje bien, pero no hace el trabajo del tema.

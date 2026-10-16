@@ -54,6 +54,7 @@ kit-eq/                              ← el repo = la tienda
 | Skill | Qué hace | Etapa |
 |---|---|---|
 | `capataz` | La puerta de entrada: entiende qué necesita la persona y hace el trabajo que corresponde (ver "El Capataz") | Hecho en 0.2.0 |
+| `arquitecto` | Ayuda a pensar cómo encarar algo cuando la persona no sabe por dónde empezar: hasta 5 preguntas, recomienda formato y pestaña, y deja un plan de una página que se guarda como `PLAN.md`. El Capataz lo lee al armar la carpeta y no repregunta | Hecho en 0.3.0 |
 | `inicio` | Lee la carpeta y cuenta dónde quedaron. Si hay receta, la corre paso a paso. Si la carpeta no está armada, la arma con el Capataz | Hecho en 0.2.0 |
 | `cierre` | Muestra el borrador, deja al día el handoff y el changelog, propone pasos para la receta y reglas o palabras nuevas para el `CLAUDE.md`, en un solo borrador y con una sola pregunta | Hecho en 0.2.0 |
 | `anotar` | Pasa un proceso que hicieron en el chat a `RECETA.md`, con un control por paso | B |
@@ -75,7 +76,7 @@ kit-eq/                              ← el repo = la tienda
 ## El Capataz
 - **Es una skill, no un agente.** Los agentes de un plugin trabajan aparte y no pueden charlar con la persona, y el Capataz pregunta de a una.
 - **Es corto.** Escucha, decide qué trabajo toca y lo hace con sus herramientas. No trabaja el tema.
-- **Sus trabajos son archivos internos** (`capataz/trabajos/*.md`), no skills visibles: los alumnos ven una sola puerta y Claude no elige la equivocada. Lee solo el trabajo que le toca.
+- **Sus trabajos son archivos internos** (`capataz/trabajos/*.md`), no skills visibles: los alumnos ven una sola puerta y Claude no elige la equivocada. Lee solo el trabajo que le toca. **El Arquitecto es una skill aparte** porque piensa y recomienda en vez de armar carpetas, y tiene que andar también en Chat, donde el Capataz no escribe archivos.
 
 | Trabajo | Qué hace | Cowork | Code | Etapa |
 |---|---|---|---|---|
@@ -165,3 +166,4 @@ Una skill creada para una sola persona es **personal** y queda en su cuenta. Si 
 4. Con "Sync automatically" prendido: ¿un cambio llega sin subir la versión, o hace falta subirla?
 5. ¿Claude en Cowork ve las instrucciones globales, para que el Capataz no repregunte el puesto?
 6. Que el material de las próximas clases use la carpeta modelo del kit en vez de una propia del taller.
+7. El flujo completo **arquitecto → `PLAN.md` → capataz**, con una carpeta vacía, con una carpeta ya armada y desde Chat sin carpeta. Y que el Arquitecto se active con las frases de su `description` sin pisar al Capataz.

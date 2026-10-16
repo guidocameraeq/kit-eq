@@ -7,7 +7,7 @@ La persona está empezando. En esta conversación sale con **su primera carpeta 
 Decilo así, con tus palabras:
 - *"Claude se olvida de una conversación a otra. La carpeta, no: es el cuaderno."*
 - *"Cada tema de trabajo tiene su carpeta. Adentro hay un `CLAUDE.md` que dice de qué se trata y sus reglas, y un `SESSION_HANDOFF.md` que dice dónde quedamos."*
-- *"Las palabras son tres: **capataz** para armar una carpeta, **inicio** para retomar, **cierre** para dejar anotado."*
+- *"Las palabras son tres: **capataz** para armar una carpeta, **inicio** para retomar, **cierre** para dejar anotado. Y una cuarta para cuando no sabés cómo encarar algo: **arquitecto**."*
 - *"Un tema por conversación. Los originales no se tocan: se trabaja con copias."*
 - *"Ahora armamos tu primera carpeta, con un tema real tuyo."*
 
@@ -31,7 +31,7 @@ Contá qué quedó armado (lista corta) y el ciclo, con el próximo paso concret
 ## Paso 5: qué más hay (corto)
 
 Decí, en tres líneas:
-- *"Para un tema nuevo: **capataz**. Para retomar: **inicio**. Para dejar anotado: **cierre**."*
+- *"Para un tema nuevo: **capataz**. Para retomar: **inicio**. Para dejar anotado: **cierre**. Si no sabés cómo encarar algo: **arquitecto**."*
 - *"Excel, Word, PowerPoint y PDF: pedímelos directamente."*
 - *"Para ver todo lo que hay, decí **¿qué puedo hacer con el kit?**"*
 
