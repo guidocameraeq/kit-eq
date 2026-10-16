@@ -2,6 +2,8 @@
 
 Plugin de Claude Code / Cowork con el método de la carpeta para administrativos que no programan.
 
+**Antes de tocar nada, leé `docs/DISENO.md`** (diseño v3, decisiones y hoja de ruta).
+
 ## Reglas duras
 1. **Repo PÚBLICO.** Cero secretos, IPs, servidores, usuarios, claves, nombres de vistas reales o datos de la empresa, en archivos y en mensajes de commit. Lo privado vive en la carpeta compartida (`conexion-eq.json`, `vistas.md`). Antes de cada commit: `py herramientas/revisar.py`.
 2. **`skills/configurar/principios.md` es la fuente única de los principios.** No se edita sin pedido de Guido.
@@ -19,4 +21,7 @@ Plugin de Claude Code / Cowork con el método de la carpeta para administrativos
 - `herramientas/` revisar y empaquetar (no son skills).
 
 ## Commits
-Chicos, en español. Sin remoto hasta que Guido publique.
+Chicos, en español. Antes de cada commit: `py herramientas/revisar.py`.
+
+## Trabajo en una sesión en la nube
+La sesión en la nube solo ve este repo (no el taller del curso ni la lista privada de nombres). Trabajá en una **rama nueva** y abrí un **PR**: nunca push directo a `main`. Guido revisa y mergea. No inventes nombres de personas, de la empresa ni de sistemas: usá ejemplos genéricos verosímiles.
