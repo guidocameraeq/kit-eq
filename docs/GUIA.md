@@ -100,6 +100,13 @@ Claude trabaja mejor con conversaciones **cortas y de un solo tema**. Cuando una
 
 Una *skill* es una habilidad que se le suma a Claude. Las tres palabras (**capataz**, **inicio** y **cierre**) conviene decirlas tal cual; para lo demás alcanza con decir lo que necesitás, y Claude elige la skill que corresponde.
 
+### arquitecto: pensar cómo encarar algo
+*"Arquitecto, quiero hacer un informe y no sé cómo"*. Sirve cuando tenés algo para resolver y no sabés qué formato conviene, qué datos usar o en qué pestaña hacerlo.
+- Te hace hasta 5 preguntas, de a una, con opciones y una recomendada.
+- Te muestra un **plan de una página**: qué se quiere lograr, con qué datos, en qué formato, en qué pestaña y cómo controlarlo.
+- Con tu OK lo guarda como `PLAN.md` en la carpeta del tema. Después decís **capataz** y arma la carpeta con ese plan, sin volver a preguntarte lo mismo.
+- No hace el trabajo: te ayuda a decidir el camino.
+
 ### capataz: el jefe de obra
 Prepara todo para que se trabaje bien, pero no hace el trabajo del tema.
 - **Bienvenida:** *"Capataz, es mi primera vez"*.

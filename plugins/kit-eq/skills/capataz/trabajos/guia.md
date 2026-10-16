@@ -2,7 +2,7 @@
 
 La persona quiere saber qué puede hacer con el kit y cómo. Seguí las **reglas de oro** del `SKILL.md`. Respondé **por tareas**, no por nombres técnicos: *"Si querés X, decí Y."*
 
-> Catálogo de la versión **0.2.1** del kit. Se actualiza con cada versión.
+> Catálogo de la versión **0.3.0** del kit. Se actualiza con cada versión.
 
 ## Catálogo
 
@@ -11,6 +11,7 @@ La persona quiere saber qué puede hacer con el kit y cómo. Seguí las **reglas
 | Si querés... | Decí algo como... | Skill |
 |---|---|---|
 | Empezar de cero, la primera vez | *"Capataz, es mi primera vez"* | `capataz` (Bienvenida) |
+| Pensar cómo encarar algo cuando no sabés qué hacer (qué formato, qué datos, qué pestaña) | *"Arquitecto, quiero hacer un informe y no sé cómo"* | `arquitecto` |
 | Armar la carpeta de un tema nuevo (en una carpeta vacía alcanza con decir *"inicio"*), o completar la carpeta modelo del curso | *"Capataz, armame una carpeta para la conciliación de proveedores"* | `capataz` (Arrancar) |
 | Retomar donde quedaste | *"inicio"* (en una conversación nueva, en la carpeta del tema) | `inicio` |
 | Dejar anotado lo que hiciste | *"cierre"* | `cierre` |

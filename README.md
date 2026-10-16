@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img alt="kit-eq 0.2.1" src="https://img.shields.io/badge/kit--eq-0.2.1-E9A23B"> <img alt="kit-eq-code 0.2.4" src="https://img.shields.io/badge/kit--eq--code-0.2.4-E9A23B">
+  <img alt="kit-eq 0.3.0" src="https://img.shields.io/badge/kit--eq-0.3.0-E9A23B"> <img alt="kit-eq-code 0.2.4" src="https://img.shields.io/badge/kit--eq--code-0.2.4-E9A23B">
   <img alt="pensado para Cowork y Code" src="https://img.shields.io/badge/pensado%20para-Cowork%20%C2%B7%20Code-26355C">
   <img alt="licencia MIT" src="https://img.shields.io/badge/licencia-MIT-6B7A99">
 </p>
@@ -28,7 +28,7 @@ El **kit eQ** es un paquete de habilidades (*skills*) para Claude que se instala
 
 - **Cada tema de trabajo tiene su carpeta.** Por ejemplo: la conciliación bancaria, las facturas de proveedores o las liquidaciones.
 - **La carpeta es el cuaderno.** Adentro queda escrito de qué se trata el tema, sus reglas y dónde quedaron la última vez.
-- **Tres palabras alcanzan:** **capataz** arma la carpeta, **inicio** retoma y **cierre** deja todo anotado.
+- **Tres palabras alcanzan:** **capataz** arma la carpeta, **inicio** retoma y **cierre** deja todo anotado. Y si no sabés cómo encarar algo, una cuarta: **arquitecto** te ayuda a decidir qué hacer antes de armar nada.
 
 ## Por qué sirve
 
@@ -65,6 +65,7 @@ flowchart LR
 | **capataz** | Tenés un tema nuevo | Te hace hasta 5 preguntas, de a una, y arma la carpeta con su `CLAUDE.md` |
 | **inicio** | Abrís una conversación nueva en la carpeta de un tema | Claude lee la carpeta y te cuenta en 3 líneas dónde quedaron y qué sigue. Si la carpeta está vacía, la arma |
 | **cierre** | Terminás por hoy | Claude te muestra qué va a anotar y, con tu OK, deja la carpeta al día |
+| **arquitecto** | No sabés cómo encarar algo (qué formato, qué datos, qué pestaña) | Te hace hasta 5 preguntas, de a una, y te deja un plan de una página. Después, **capataz** arma la carpeta con ese plan |
 
 **Un tema por conversación.** Si cambiás de tema o Claude se pone lento: **cierre** y conversación nueva. Con **inicio** se retoma sin perder nada.
 
@@ -75,6 +76,7 @@ flowchart LR
 | Skill | Para qué | Decí algo como... |
 |---|---|---|
 | `capataz` | Te da la bienvenida, arma o completa la carpeta de un tema y te cuenta qué podés hacer | *"Capataz, armame una carpeta para las facturas de proveedores"* |
+| `arquitecto` | Te ayuda a pensar cómo encarar algo cuando no sabés por dónde empezar, y deja un `PLAN.md` | *"Arquitecto, quiero hacer un informe pero no sé cómo"* |
 | `inicio` | Retoma donde quedaste y, si hay receta, la corre paso a paso | *"inicio"* |
 | `cierre` | Deja anotado qué se hizo, qué sigue y lo que aprendió del tema | *"cierre"* |
 
@@ -124,7 +126,7 @@ El Capataz conoce esta **carpeta modelo**. Si la carpeta está vacía la arma, y
 
 ## Estado
 
-**Versiones: `kit-eq` 0.2.1 y `kit-eq-code` 0.2.4.** Cada paquete lleva su propio número.
+**Versiones: `kit-eq` 0.3.0 y `kit-eq-code` 0.2.4.** Cada paquete lleva su propio número.
 - **Probado en Code:** se validó con la herramienta oficial de plugins y se ensayó con una alumna ficticia (bienvenida, carpeta nueva, carpeta a medio armar, guía y cierre).
 - **NO VERIFICADO en Cowork Pro:** la instalación desde la tienda y el uso del kit. Se confirma en el primer uso.
 

@@ -54,6 +54,7 @@ kit-eq/                              ← el repo = la tienda
 | Skill | Qué hace | Etapa |
 |---|---|---|
 | `capataz` | La puerta de entrada: entiende qué necesita la persona y hace el trabajo que corresponde (ver "El Capataz") | Hecho en 0.2.0 |
+| `arquitecto` | Ayuda a pensar cómo encarar algo cuando la persona no sabe por dónde empezar: hasta 5 preguntas, recomienda formato y pestaña, y deja un plan de una página que se guarda como `PLAN.md`. El Capataz lo lee al armar la carpeta y no repregunta | Hecho en 0.3.0 |
 | `inicio` | Lee la carpeta y cuenta dónde quedaron. Si hay receta, la corre paso a paso. Si la carpeta no está armada, la arma con el Capataz | Hecho en 0.2.0 |
 | `cierre` | Muestra el borrador, deja al día el handoff y el changelog, propone pasos para la receta y reglas o palabras nuevas para el `CLAUDE.md`, en un solo borrador y con una sola pregunta | Hecho en 0.2.0 |
 | `anotar` | Pasa un proceso que hicieron en el chat a `RECETA.md`, con un control por paso | B |

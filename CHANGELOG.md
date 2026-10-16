@@ -1,5 +1,20 @@
 # CHANGELOG — kit eQ
 
+## 0.3.0 de `kit-eq` — 16/10/2026 — el Arquitecto
+
+### Agregado
+- Skill `arquitecto` (paquete `kit-eq`, anda en Chat, Cowork y Code): ayuda a pensar cómo encarar algo cuando la persona no sabe por dónde empezar. Hasta 5 preguntas, de a una; recomienda formato (Excel, Word o PDF, presentación, HTML, texto, reporte del sistema) y pestaña (Chat, Cowork o Code); muestra un plan de una página y, con OK, lo guarda como `PLAN.md` en la carpeta del tema.
+
+### Cambiado
+- El Capataz (Arrancar) lee `PLAN.md` si existe, usa esas respuestas sin repreguntar y suma una fila en `LEEME-PRIMERO.md`. Una carpeta con solo `PLAN.md` cuenta como vacía.
+- El Capataz deriva al Arquitecto cuando la persona no sabe cómo encarar algo, y la Guía lo suma al catálogo.
+- README y guía de uso: la palabra **arquitecto**.
+- `kit-eq` sube a 0.3.0 (skill nueva). `kit-eq-code` sigue en 0.2.4.
+
+### NO VERIFICADO
+- Que el Arquitecto se active solo con las frases del `description` en Cowork Pro.
+- Que pueda guardar `PLAN.md` en la carpeta conectada de Cowork.
+
 ## 0.2.4 de `kit-eq-code` — 16/10/2026 — la carpeta Reportes es siempre la misma
 
 ### Cambiado

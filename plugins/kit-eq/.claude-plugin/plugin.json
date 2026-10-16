@@ -1,8 +1,8 @@
 {
   "name": "kit-eq",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/guidocameraeq/kit-eq",
-  "description": "Kit eQ: el método de la carpeta para trabajar con Claude en la oficina, para gente que no programa. El Capataz te da la bienvenida, arma cada carpeta con su CLAUDE.md y te guía; inicio y cierre retoman y anotan. Anda en Cowork y en Code.",
+  "description": "Kit eQ: el método de la carpeta para trabajar con Claude en la oficina, para gente que no programa. El Arquitecto te ayuda a pensar cómo encarar algo; el Capataz te da la bienvenida, arma cada carpeta con su CLAUDE.md y te guía; inicio y cierre retoman y anotan. Anda en Cowork y en Code.",
   "author": {
     "name": "eQ"
   },

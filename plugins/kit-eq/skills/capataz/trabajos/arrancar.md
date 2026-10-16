@@ -28,7 +28,7 @@ Mirá qué hay (solo los nombres) y, si existe `CLAUDE.md`, leelo. Revisá estos
 | 2 | **Muchas cosas que no son de un tema** (es Documentos, el Escritorio o una carpeta con temas mezclados) | No armes acá. Pedí que creen una carpeta vacía para el tema y que abran la conversación con esa carpeta |
 | 3 | **Todas las piezas** (`RECETA.md` solo si el tema se repite) y un `CLAUDE.md` **sin huecos** | **Ya está armada.** Decí *"Esta carpeta ya está armada. ¿La retomamos (decí **inicio**) o armamos otra para un tema distinto?"* y pará. Si te llamó `inicio`, no le pidas que diga inicio: seguí con los pasos 3 a 6 de `inicio` |
 | 4 | **Algunas piezas**, o un `CLAUDE.md` **con huecos** | **A medio armar**, casi siempre una copia de la carpeta modelo del curso. Decí *"Esta carpeta está a medio armar: la completo con unas preguntas."* En el Paso 4 **completás lo que hay** y **sumás las piezas que faltan** |
-| 5 | **Ninguna pieza** (vacía, o solo con algún archivo de trabajo suelto) | **Carpeta nueva.** Decí *"Esta carpeta todavía no tiene nada del método: armo tu carpeta según la carpeta modelo, con unas preguntas."* |
+| 5 | **Ninguna pieza** (vacía, o solo con algún archivo de trabajo suelto o con un `PLAN.md`) | **Carpeta nueva.** Decí *"Esta carpeta todavía no tiene nada del método: armo tu carpeta según la carpeta modelo, con unas preguntas."* |
 
 Si te llamó `inicio`, ya avisó que va a armar la carpeta: no repitas el aviso de las filas 4 y 5 y pasá directo al Paso 1.
 
@@ -37,6 +37,8 @@ Si hay archivos de trabajo sueltos (por ejemplo, un Excel), no los toques: en la
 ## Paso 1: lo que ya sabés
 
 Juntá lo que ya sabés de la persona: sus instrucciones (nombre, puesto, área, sistemas que usa, a quién le reporta), lo que dijo al pedirte la carpeta y lo que ya esté escrito en un `CLAUDE.md` a medio armar. Confirmalo en **una línea**, por ejemplo: *"Por lo que tengo de vos, trabajás en tesorería y usás el sistema de la empresa y Excel."* No es una pregunta: seguí directo con la primera que falte.
+
+**Si hay un `PLAN.md` en la carpeta** (lo deja el Arquitecto), leelo: ahí ya están contestadas las preguntas 1 a 4 (de qué se trata, cada cuánto, con qué se trabaja, qué tiene que salir y para quién). Usá esas respuestas tal cual, **no las repreguntes**, y decilo en una línea: *"Vi el plan que armamos: lo uso para armar la carpeta."* Si el plan tiene un dato dudoso o "(a confirmar)", preguntá solo eso. El `PLAN.md` **queda en la carpeta** y no lo modificás.
 
 ## Paso 2: las preguntas (5 como máximo, de a una)
 
@@ -88,7 +90,7 @@ Partí de los archivos de `carpeta-modelo/`. Reemplazá **todos** los `{{...}}`;
 1. `originales/` y `resultados/`, si no existen.
 2. Si hubo OK para copiar archivos que ya estaban en la carpeta: copiarlos (nunca mover) a `originales/` y contar cuántos había y cuántos quedaron. Si alguno no se pudo copiar, anotalo para el punto 5.
 3. `CLAUDE.md`.
-4. `LEEME-PRIMERO.md`. Si no hay receta, borrá la fila de `RECETA.md`.
+4. `LEEME-PRIMERO.md`. Si no hay receta, borrá la fila de `RECETA.md`. Si hay `PLAN.md`, sumá a la tabla una fila: `PLAN.md` | El plan de encare: qué se quiere lograr y cómo.
 5. `SESSION_HANDOFF.md`: en "Qué hicimos" poné **solo lo que de verdad quedó hecho** (si una copia falló, va en "Pendientes"). En "Qué sigue", el primer paso concreto. Si ya existía con contenido real, no lo pises: sumá lo nuevo.
 6. `CHANGELOG.md`: si ya existía, agregá la línea de hoy arriba de todo.
 7. `RECETA.md`, **solo si se repite**.
