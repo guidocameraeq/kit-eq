@@ -5,7 +5,7 @@ Tienda de plugins para Claude (Cowork y Code) con el método de la carpeta, para
 **Antes de tocar nada, leé `docs/DISENO.md`** (diseño v3, decisiones y hoja de ruta).
 
 ## Reglas duras
-1. **Repo PÚBLICO.** Cero secretos, IPs, servidores, usuarios, claves, nombres de vistas reales o datos de la empresa, en archivos y en mensajes de commit. Lo privado vive en la carpeta compartida (`conexion-eq.json`, `vistas.md`). Antes de cada commit: `py herramientas/revisar.py`.
+1. **Repo PÚBLICO.** Cero secretos, IPs, servidores, usuarios, claves, datos de la empresa, en archivos y en mensajes de commit. Lo privado vive en cada PC (`conexion-eq.json`, repartido por pendrive). **Excepción decidida por Guido:** `plugins/kit-eq-code/skills/reportes/vistas.md` lleva nombres de vistas y columnas (estructura, nunca datos) y es el único lugar donde pueden ir. Antes de cada commit: `py herramientas/revisar.py`.
 2. **`plugins/kit-eq-code/skills/configurar/principios.md` es la fuente única de los principios.** No se edita sin pedido de Guido.
 3. **Seguridad de las skills:** nunca borrar ni mover originales; trabajar sobre copias; verificar números contra la fuente; SQL solo `SELECT` sobre vistas.
 4. **Cada skill dice dónde anda (Cowork / Code) y qué NO hace.** Lo de SQL, solo Code.

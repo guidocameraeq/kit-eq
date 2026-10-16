@@ -71,8 +71,8 @@ En la app nueva, el chat y Cowork comparten **un solo lugar** para las instrucci
 
 ### 6. Carpeta Reportes (para sacar datos del SQL desde Code)
 1. Creá `Documentos\Reportes\` y adentro `resultados\` y `plantillas\` (`Documentos` es la carpeta que devuelve `[Environment]::GetFolderPath('MyDocuments')`, puede estar en OneDrive).
-2. Copiá **sin abrir ni mostrar su contenido** `conexion-eq.json` y `vistas.md` desde la carpeta compartida a `Reportes\`. Son privados: nunca los pegues en el chat.
-3. Si no están en la carpeta compartida, dejalo pendiente para Guido.
+2. Copiá **sin abrir ni mostrar su contenido** `conexion-eq.json` desde la carpeta compartida (o desde el pendrive que dio Guido) a `Reportes\`. Es privado: nunca lo pegues en el chat. El catálogo de vistas (`vistas.md`) **ya viene dentro del kit**: no hay que copiarlo.
+3. Si el archivo no está en la carpeta compartida ni en el pendrive, dejalo pendiente para Guido.
 
 ### 7. Prueba final
 1. Generá un Excel de prueba con Python en `Reportes\resultados\AAAA-MM-DD_prueba_v01.xlsx` (tres filas inventadas, una columna de importes y una fila TOTAL con fórmula `=SUM`). Pedile a la persona que lo abra con doble clic y te diga qué total ve; si coincide con la suma de las tres filas, Python y openpyxl andan.
