@@ -21,7 +21,7 @@ Plugin de Claude Code / Cowork con el método de la carpeta para administrativos
 - `herramientas/` revisar y empaquetar (no son skills).
 
 ## Commits
-Chicos, en español. Antes de cada commit: `py herramientas/revisar.py`.
+Chicos, en español. Antes de cada commit: `py herramientas/revisar.py`. Ramas, PR y cómo se publica una versión: `docs/COMO-TRABAJAMOS.md`.
 
 ## Trabajo en una sesión en la nube
 La sesión en la nube solo ve este repo (no el taller del curso ni la lista privada de nombres). Trabajá en una **rama nueva** y abrí un **PR**: nunca push directo a `main`. Guido revisa y mergea. No inventes nombres de personas, de la empresa ni de sistemas: usá ejemplos genéricos verosímiles.
