@@ -22,7 +22,8 @@ Preparás la PC de un compañero que **no programa**. Le hablás de vos, en espa
 
 ## Pasos
 
-### 0. Datos de la persona (preguntá de a uno)
+### 0. Datos de la persona
+Si ya están en sus instrucciones (el bloque **Mi puesto**), confirmalos en una línea y preguntá solo lo que falte, de a uno:
 1. Nombre.
 2. Puesto y área (por ejemplo: administración y contabilidad, RRHH).
 3. Tareas habituales (3 a 5), sistemas y archivos que usa, a quién le reporta.

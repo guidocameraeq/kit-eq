@@ -26,9 +26,11 @@ Mirá qué hay (solo los nombres) y, si existe `CLAUDE.md`, leelo. Revisá estos
 |---|---|---|
 | 1 | **Subcarpetas que ya son carpetas de tema** (tienen su `CLAUDE.md`) | **Es la carpeta madre**, donde viven todos los temas. Preguntá: *"¿Armo el tema nuevo como una subcarpeta acá adentro? (Recomendado)"*. Con el sí, trabajá en esa subcarpeta y al final avisá que la próxima vez abran la conversación con esa subcarpeta |
 | 2 | **Muchas cosas que no son de un tema** (es Documentos, el Escritorio o una carpeta con temas mezclados) | No armes acá. Pedí que creen una carpeta vacía para el tema y que abran la conversación con esa carpeta |
-| 3 | **Todas las piezas** (`RECETA.md` solo si el tema se repite) y un `CLAUDE.md` **sin huecos** | **Ya está armada.** Decí *"Esta carpeta ya está armada. ¿La retomamos (decí **inicio**) o armamos otra para un tema distinto?"* y pará |
+| 3 | **Todas las piezas** (`RECETA.md` solo si el tema se repite) y un `CLAUDE.md` **sin huecos** | **Ya está armada.** Decí *"Esta carpeta ya está armada. ¿La retomamos (decí **inicio**) o armamos otra para un tema distinto?"* y pará. Si te llamó `inicio`, no le pidas que diga inicio: seguí con los pasos 3 a 6 de `inicio` |
 | 4 | **Algunas piezas**, o un `CLAUDE.md` **con huecos** | **A medio armar**, casi siempre una copia de la carpeta modelo del curso. Decí *"Esta carpeta está a medio armar: la completo con unas preguntas."* En el Paso 4 **completás lo que hay** y **sumás las piezas que faltan** |
 | 5 | **Ninguna pieza** (vacía, o solo con algún archivo de trabajo suelto) | **Carpeta nueva.** Decí *"Esta carpeta todavía no tiene nada del método: armo tu carpeta según la carpeta modelo, con unas preguntas."* |
+
+Si te llamó `inicio`, ya avisó que va a armar la carpeta: no repitas el aviso de las filas 4 y 5 y pasá directo al Paso 1.
 
 Si hay archivos de trabajo sueltos (por ejemplo, un Excel), no los toques: en la pregunta 5 ofrecé copiarlos a `originales/`.
 
@@ -74,8 +76,9 @@ Partí de los archivos de `carpeta-modelo/`. Reemplazá **todos** los `{{...}}`;
 | `{{QUIEN_LO_HACE}}` | La persona y su puesto, de lo que ya sabías |
 | `{{PARA_QUIEN}}`, `{{QUIEN_APRUEBA}}` | De la pregunta 4 y la pregunta extra, o "(a confirmar)" |
 | `{{CADA_CUANTO}}` | Frecuencia y fecha clave (pregunta 2) |
-| `{{INSUMOS}}`, `{{SALIDA_Y_FORMATO}}`, `{{REGLAS_NEGOCIO}}`, `{{PALABRAS}}` | Renglones que empiezan con `- `. Si no hay nada: `- (todavía nada: se suman en cada cierre)` |
-| `{{PRIMER_PASO}}` | El primer paso concreto ("Copiar el extracto de septiembre a `originales/` y decir inicio") |
+| `{{INSUMOS}}`, `{{SALIDA_Y_FORMATO}}` | Renglones que empiezan con `- `. Si no se sabe: `- (a confirmar)` |
+| `{{REGLAS_NEGOCIO}}`, `{{PALABRAS}}` | Renglones que empiezan con `- `. Si no hay nada: `- (todavía nada: se suman en cada cierre)` |
+| `{{PRIMER_PASO}}` | El primer paso concreto del trabajo ("Pegar el extracto de septiembre en `originales/` y armar la conciliación") |
 | En `RECETA.md`: `{{OBJETIVO}}`, `{{CUANDO}}`, `{{APRUEBA}}` | De las preguntas |
 | En `RECETA.md`: `{{INSUMO}}`, `{{SALIDA}}` | Un renglón por insumo y por salida (repetí el renglón) |
 | En `RECETA.md`: la fila de Pasos | Una sola fila: `\| 1 \| (se completa la primera vez que lo hagamos juntos) \| — \| — \|` |
@@ -95,6 +98,6 @@ Partí de los archivos de `carpeta-modelo/`. Reemplazá **todos** los `{{...}}`;
 Si te llamó la **Bienvenida**, no hagas este paso: ella sigue. Si no, decí corto:
 - Qué quedó armado o completado (lista de piezas).
 - Si quedaron archivos por traer: *"Pegá tus archivos en `originales/`."*
-- **Si te llamó `inicio`:** preguntá *"¿Seguimos con el tema acá mismo? (Recomendado) / Lo dejo para otra conversación"*. Si sigue, contá en una línea qué sigue (lo de `SESSION_HANDOFF.md`) y arrancá a trabajar.
+- **Si te llamó `inicio`:** preguntá *"¿Seguimos con el tema acá mismo? (Recomendado) / Lo dejo para otra conversación"*. Si sigue, contá en una línea qué sigue (lo de `SESSION_HANDOFF.md`), sumá *"Cuando termines por hoy, decí **cierre** y anoto dónde quedamos."* y arrancá a trabajar.
 - **Si no:** *"Abrí una conversación nueva en esta carpeta y decí **inicio**. Al terminar, decí **cierre**."*
 - Si es proceso: *"La primera vez que lo hagamos, al cerrar te propongo los pasos para la receta."*

@@ -100,6 +100,9 @@ for f in archivos:
     if f.name in prohibidos or (f.name.lower().startswith("conexion") and f.suffix.lower() == ".json" and "ejemplo" not in f.name):
         error(f"{rel}: este archivo es privado y no puede ir al repo")
         continue
+    if f.suffix.lower() in {".pyc", ".pyo"} or "__pycache__" in f.parts:
+        error(f"{rel}: archivo compilado de Python, no va al repo (está en .gitignore)")
+        continue
     if f.suffix.lower() in {".xlsx", ".csv", ".odc"}:
         error(f"{rel}: no se publican datos ni conexiones ({f.suffix})")
         continue

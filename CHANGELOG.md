@@ -1,5 +1,43 @@
 # CHANGELOG — kit eQ
 
+## 0.2.1 — 16/10/2026 (pulido para presentar)
+
+### Probado
+- Ensayo en Code (alumna ficticia):
+  - **"inicio" en la carpeta madre:** lista los temas y no escribe nada.
+  - **"Corramos la receta":** dispara `inicio`.
+  - **"inicio" en una carpeta vacía:** arranca a armarla.
+  - **"Anotá en el CLAUDE.md que...":** no dispara `cierre`.
+- `claude plugin validate` e instalación desde GitHub (0.2.0) con la línea de comandos.
+
+### Corregido
+- **Se había colado un archivo compilado de Python** (`__pycache__`) en el repo y en el paquete. Se sacó, va en `.gitignore` y `revisar.py` lo frena.
+- **Las skills se contradecían** sobre qué pasa después de armar la carpeta. Ahora, si a Arrancar lo llamó `inicio`, ofrece seguir ahí mismo y enseña a decir **cierre**; si no, manda a una conversación nueva.
+- **`inicio` en la carpeta madre o en Documentos** ya no ofrece armar la carpeta ahí: muestra los temas y explica qué abrir.
+- **Avisos repetidos e idas y vueltas:**
+  - inicio y Arrancar ya no repiten el mismo aviso.
+  - Una carpeta ya armada no manda a decir "inicio" otra vez.
+  - Los huecos se definen igual en los dos.
+- **Bienvenida:** si Arrancar paró, no sigue como si hubiera armado algo.
+- **El primer `SESSION_HANDOFF.md`** ya no dice "decir inicio" como próximo paso: dice el primer paso del trabajo.
+- **Frases del machete que no activaban nada:** "corramos la receta" ahora activa `inicio`, y "anotá en el CLAUDE.md que..." ya no activa `cierre`.
+- **`inicio`:** no hace dos preguntas juntas cuando pasó más de un mes.
+- **`configurar`:** no repregunta lo que ya está en "Mi puesto".
+- **"Anotá en el CLAUDE.md que..."** se anota tal cual lo dijo la persona, sin agregarle interpretaciones, y se muestra la línea.
+
+### Cambiado
+- **Capataz:** suma la sección "Lo que NO hace", y "revisá esta carpeta" avisa que viene más adelante.
+- **Documentación:**
+  - README: los requisitos antes de empezar, cómo elegir la carpeta (el **+** del cuadro donde se escribe) y el badge "pensado para Cowork · Code" hasta probarlo en Cowork.
+  - Guía de uso:
+    - Los menús van en inglés, como los muestra la app, con la traducción.
+    - Los datos del sistema arrancan en `Documentos\Reportes`.
+    - Suma dos problemas frecuentes.
+    - El zip del plan B se baja de la versión publicada en GitHub.
+  - Las herramientas de mantenimiento se explican en "Cómo trabajamos".
+- **Banner:** sin la frase repetida.
+- **`plugin.json`:** dirección del repo (`homepage`).
+
 ## 0.2.0 — 16/10/2026 (para la Clase 1)
 
 ### Para quien ya lo tenía
@@ -59,7 +97,7 @@
 
 ### NO VERIFICADO
 - **Todo en Cowork Pro:**
-  - Add marketplace, Sync automatically y Upload plugin. Tampoco si Cowork espera a que suba la versión.
+  - Add marketplace, Sync automatically y Upload plugin. Tampoco si Cowork necesita que suba la versión para mandar la actualización.
   - Que capataz, inicio y cierre lean `trabajos/` y `carpeta-modelo/`, y que inicio llegue al Arrancar del Capataz.
 - **La pestaña Code de la app de escritorio:** los comandos `/plugin`.
 - **Los nombres de menú:** Configuración > General > Instrucciones para Claude.

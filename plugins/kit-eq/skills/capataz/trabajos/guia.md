@@ -2,7 +2,7 @@
 
 La persona quiere saber qué puede hacer con el kit y cómo. Seguí las **reglas de oro** del `SKILL.md`. Respondé **por tareas**, no por nombres técnicos: *"Si querés X, decí Y."*
 
-> Catálogo de la versión **0.2.0** del kit. Se actualiza con cada versión.
+> Catálogo de la versión **0.2.1** del kit. Se actualiza con cada versión.
 
 ## Catálogo
 
@@ -23,7 +23,7 @@ La persona quiere saber qué puede hacer con el kit y cómo. Seguí las **reglas
 | Dejar la PC lista, una sola vez | *"configurar"* | `configurar` |
 | Sacar datos del sistema a un Excel | *"Sacame los saldos de septiembre en Excel"* | `reportes` (desde la oficina o con VPN) |
 
-**Oficiales de Anthropic** (vienen con Claude, no son del kit)
+**Oficiales de Anthropic** (no son del kit; en Code se suman con `configurar`)
 
 | Si querés... | Decí algo como... |
 |---|---|

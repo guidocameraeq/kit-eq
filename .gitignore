@@ -8,7 +8,9 @@ resultados/
 *.xlsx
 *.csv
 
-# Basura de Office y del sistema
+# Basura de Office, de Python y del sistema
+__pycache__/
+*.pyc
 ~$*
 *.tmp
 Thumbs.db
