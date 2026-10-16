@@ -15,7 +15,7 @@
   Usa System.Data.SqlClient, que viene con Windows PowerShell 5.1 (no hace falta instalar nada).
 #>
 param(
-  [Parameter(Mandatory = $true)][string]$Conexion,
+  [string]$Conexion = '',
   [Parameter(Mandatory = $true)][string]$Consulta,
   [Parameter(Mandatory = $true)][string]$Salida,
   [int]$Espera = 8,
@@ -106,6 +106,15 @@ foreach ($m in [regex]::Matches($sinTextos, "(?i)\b(?:FROM|JOIN)\s+(?!\()($objet
 }
 
 # --- 2. Conexión --------------------------------------------------------
+# La carpeta Reportes es siempre la misma (Documentos\Reportes), se abra la sesion donde se abra.
+# La conexion y los resultados se buscan ahi; una ruta que no sea completa se toma desde ahi.
+# (KIT_EQ_REPORTES existe para las pruebas y para quien tenga Documentos en otro lado.)
+$reportes = $env:KIT_EQ_REPORTES
+if (-not $reportes) { $reportes = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'Reportes' }
+if (-not $Conexion) { $Conexion = Join-Path $reportes 'conexion-eq.json' }
+elseif (-not [System.IO.Path]::IsPathRooted($Conexion)) { $Conexion = Join-Path $reportes $Conexion }
+if (-not [System.IO.Path]::IsPathRooted($Salida)) { $Salida = Join-Path $reportes $Salida }
+
 if (-not (Test-Path -LiteralPath $Conexion)) {
   Salir "FALTA CONEXION: no encuentro '$Conexion'. Lo copia la skill 'configurar' desde la carpeta compartida." 3
 }

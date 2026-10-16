@@ -51,4 +51,14 @@ foreach ($c in $casos) {
   '{0}  esperado={1} real={2}  {3}' -f $(if ($ok) { 'OK ' } else { 'MAL' }), $c[0], $real, $c[1]
 }
 ''
+# La conexion y los resultados se buscan siempre en la carpeta Reportes, sin importar desde donde se corra.
+$tmp = Join-Path $env:TEMP ('prueba-reportes-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $tmp | Out-Null
+$env:KIT_EQ_REPORTES = $tmp
+$sinConexion = (& powershell -NoProfile -ExecutionPolicy Bypass -File $script -Consulta 'SELECT 1' -Salida 'resultados\x.csv' 2>&1) -join ' '
+Remove-Item Env:KIT_EQ_REPORTES
+Remove-Item $tmp -Recurse -Force
+if ($sinConexion -like "*FALTA CONEXION*" -and $sinConexion -like "*$tmp*conexion-eq.json*") { 'OK   sin -Conexion busca conexion-eq.json en la carpeta Reportes' }
+else { $mal++; "MAL  sin -Conexion no busco en la carpeta Reportes: $sinConexion" }
+''
 if ($mal -eq 0) { "Todas las pruebas dieron lo esperado ($($casos.Count))." } else { "HAY $mal PRUEBA(S) CON RESULTADO DISTINTO."; exit 1 }
