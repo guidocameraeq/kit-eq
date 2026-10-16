@@ -33,7 +33,7 @@
     - Los menús van en inglés, como los muestra la app, con la traducción.
     - Los datos del sistema arrancan en `Documentos\Reportes`.
     - Suma dos problemas frecuentes.
-    - El zip del plan B se baja de la versión publicada en GitHub.
+    - El zip del plan B se pide a quien da el curso, o se baja de Releases si está publicado.
   - Las herramientas de mantenimiento se explican en "Cómo trabajamos".
 - **Banner:** sin la frase repetida.
 - **`plugin.json`:** dirección del repo (`homepage`).
